@@ -1,42 +1,65 @@
-//@import url(http://fonts.googleapis.com/css?family=Raleway:400,900,800,600);
 @import "color_palette";
 
 
 body {
   background: $dark_charcoal;
   color: $tan;
-//  font-family: 'Raleway', sans-serif;
-  font-family: 'Raleway', sans-serif;
+  font-family: "brandon-grotesque", sans-serif;
+  font-style: normal;
   a{
     color: $tan;
   }
-  h1, h2, h3, legend, label, button, .btn-sister-red{
-    font-style: normal;
-    font-weight: 800;
+  h1{
+    font-weight: 700;
   }
-  h4, h5, h6 {
-    font-weight: 800;
+  h2, legend, button {
+    font-weight: 600;
   }
-  p, a, span {
-    font-style: normal;
+  h3 {
+    font-weight: 500;
+  }
+  h4 {
     font-weight: 400;
+  }
+  h5, label {
+    font-weight: 300;
+  }
+  h6 {
+    font-weight: 200;
+  }
+  p, a, span, li{
+    font-weight: 300;
   }
   .panel {
     border-radius: 0;
   }
+  article li {
+    font-size: 1.5em;
+  }
 }
 
-header{
-  text-align:  center;
-  margin-bottom: 50px;
-  h1{
-    font-size: 75px;
-
+.navbar-brand {
+  font-size: 3em;
+  color: $red_light;
+  font-family: "uppercut-angle",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  &:first-letter {
+    font-size: 150%;
   }
-  img {
-    padding-top: 25px;
-    width: 325px;
-    margin-left: 10px;
+  &:hover {
+    color: $white;
+  }
+}
+
+.nav-pills {
+  li {
+    a {
+      border-radius: 0;
+   }
+  }
+  .active {
+    background: $red;
   }
 }
 
@@ -69,9 +92,9 @@ header{
 
 /*--------Login/Registration--------*/
 
-#content {
-  background: $charcoal;
-}
+//#content {
+//  background: $charcoal;
+//}
 
 .authentication_panel {
   background: $charcoal;
@@ -93,10 +116,10 @@ header{
 
   }
   a{
-    color: $red_lighten;
+    color: $red_light;
   }
   .login_failure {
-    color: $red_lighten;
+    color: $red_light;
     -webkit-animation: fadi 2s 1;
     -moz-animation: fadi 2s 1;
   }
@@ -110,137 +133,56 @@ header{
 }
 .error_list {
   list-style: none;
-  color: $red_lighten;
+  color: $red_light;
   margin-top: -15px;
   -webkit-animation: fadi 1s 1;
   -moz-animation: fadi 1s 1;
 }
 
-//.btn-sister-red {
-//  background: $red;
-//  min-width: 200px;
-//  color: $white;
-//  box-shadow: 0 5px 0 $red_med_dark;
-//  &:hover {
-//      background-color: hsl(358, 76%, 40%);
-//      box-shadow: 0 6px 0 hsl(358, 76%, 30%)
-//  }
-//  &:active {
-//      background-color: hsl(358, 76%, 30%);
-//      box-shadow: 0 6px 0 hsl(358, 76%, 40%);
-//  }
-//}
-//
-//.btn-sister-red:hover{
-// background:$red_med_dark;
-// color: $white;
-// box-shadow: 0 5px 0 $red_dark;
-//
-//}
-//.btn-sister-red:active{
-// background: $red_dark;
-// color: $white;
-// box-shadow: 0 5px 0 $red;
-//}
 
 .btn {
   border-radius: 0;
 }
 
 .btn-grey {
-  background: $grey;
+   background: $grey;
+   min-width: 200px;
+   color: $white;
+   &:hover {
+     background-color: hsl(358, 76%, 40%);
+   }
+   &:active {
+     background-color: hsl(358, 76%, 30%);
+   }
+ }
+
+
+.btn-red {
+  background: $red;
   min-width: 200px;
   color: $white;
-  box-shadow: 0 5px 0 $grey_med_dark;
   &:hover {
-    background-color: hsl(358, 76%, 40%);
-    box-shadow: 0 6px 0 hsl(358, 76%, 30%)
+    background-color: $red_med_dark;
+    color: $white_med_dark;
   }
   &:active {
-    background-color: hsl(358, 76%, 30%);
-    box-shadow: 0 6px 0 hsl(358, 76%, 40%);
+    background-color: $red;
+    color: $white_dark;
   }
 }
 
-.btn-grey:hover{
-  background:$grey_med_dark;
+.nav-btn {
   color: $white;
-  box-shadow: 0 5px 0 $grey_dark;
-
-}
-.btn-grey:active{
-  background: $grey_dark;
-  color: $white;
-  box-shadow: 0 5px 0 $grey_dark;
-}
-
-
-//.btn-sister-tan:hover{
-// background:$tan_med_dark;
-// color: $white;
-// box-shadow: 0 5px 0 $tan_dark;
-//
-//}
-//.btn-sister-tan:active{
-// background: $grey_dark;
-// color: $white;
-// box-shadow: 0 5px 0 $grey_dark;
-//}
-
-.btn-sister-tan {
-  background: $white;
-  min-width: 200px;
-  color: $charcoal;
-  box-shadow: 0 5px 0 $white_med_dark;
+  cursor: pointer;
+  font-weight: 200;
+  font-size: 1.25em;
   &:hover {
-    background-color: $white_med_dark;
-    box-shadow: 0 6px 0 $white_dark;
-    color: $dark_charcoal;
+    background: $red_med_dark !important;
+    color: $white_med_dark;
   }
   &:active {
-    background-color: $white_dark;
-    box-shadow: 0 6px 0 $white;
-  }
-}
-
-
-.navbar-default {
-  background-color: $grey;
-  color: $white;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  background-image: none;
-  filter: none;
-  -webkit-box-shadow: inset 0 1px 0 transparent !important;
-  -moz-box-shadow: inset 0 1px 0 transparent !important;
-  box-shadow: inset 0 1px 0 transparent !important;
-  border-color: transparent;
-  a {
-    color: $charcoal;
-  }
-  .navbar-brand{
-    color: $charcoal;
-    &:hover{
-      color: $white;
-    }
-  }
-  .navbar-nav li a{
-    color: $charcoal;
-    margin-top: -5px;
-    padding-bottom: 20px;
-    &:hover {
-      color: $white;
-      background-color: hsl(0, 0, 60%);
-    }
-  }
-  .navbar-nav ul{
-    li a{
-      padding: 10px;
-      &:hover {
-        color: $charcoal;
-      }
-    }
+    background: $red !important;
+    color: $white_dark;
   }
 }
 
@@ -248,5 +190,26 @@ header{
   img{
     width: 35px;
     padding-right: 5px;
+  }
+}
+
+
+#projects_content {
+  article {
+    margin: 15px 0;
+    padding: 15px;
+    background: $charcoal;
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+    &:hover {
+      background: $charcoal_med_light;
+      cursor: pointer;
+    }
+    &:active {
+      background: $charcoal_light;
+    }
   }
 }

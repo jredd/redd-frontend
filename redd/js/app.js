@@ -17,7 +17,8 @@ App.ApplicationRoute = Ember.Route.extend({
       console.log('hit the route')
       // get the sessions controller instance and reset it to then transition to the sessions route
       this.controllerFor('login').set('token', null)
-      $.removeCookie('token');
+      //this.controllerFor('login').reset();
+      $.removeCookie('token', { expires:.25, path: '/' });
       //this.controllerFor('login').get();
       this.transitionTo('login');
     }
@@ -25,7 +26,6 @@ App.ApplicationRoute = Ember.Route.extend({
 });
 
 App.AuthenticatedRoute = Ember.Route.extend({
-
   beforeModel: function(transition) {
     if (!this.controllerFor('login').get('token')) {
       this.redirect_to_login(transition)
@@ -46,6 +46,7 @@ App.AuthenticatedRoute = Ember.Route.extend({
 
     return $.getJSON(url);
   },
+
   actions: {
     error: function(reason, transition) {
       if (reason.status === 401) {
@@ -63,6 +64,12 @@ App.ProjectsRoute = App.AuthenticatedRoute.extend({
   }
 });
 
+App.DepartmentsRoute = App.AuthenticatedRoute.extend({
+  model: function() {
+    return this.get_json_with_token('http://127.0.0.1:8000/core/department-list/');
+  }
+});
+
 App.AssetsRoute = App.AuthenticatedRoute.extend({
   model: function() {
     return this.get_json_with_token('http://127.0.0.1:8000/tracker/asset-list/');
@@ -77,7 +84,11 @@ App.LoginRoute = Ember.Route.extend({
 
 App.IndexRoute = App.AuthenticatedRoute.extend();
 
-// Controllers
+
+
+App.ProjectsController = Ember.Controller.extend({
+});
+
 App.LoginController = Ember.Controller.extend({
   login_failed: false,
   isProcessing: false,
@@ -89,7 +100,7 @@ App.LoginController = Ember.Controller.extend({
   token_changed: function() {
     //localStorage.token = this.get('token');
     console.log('token changed', this.get('token'))
-    $.cookie('token', this.get('token'));
+    $.cookie('token', this.get('token'), { expires:.25, path: '/' });
 
     //$.cookie('token', this.get('token'), {expires:.1, path: '/'});
   }.observes('token'),
@@ -122,8 +133,6 @@ App.LoginController = Ember.Controller.extend({
       // Redirect to 'articles' by default
       this.transitionToRoute('projects')
     }
-
-
   },
 
   failure: function(response) {
