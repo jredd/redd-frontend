@@ -1,0 +1,252 @@
+//@import url(http://fonts.googleapis.com/css?family=Raleway:400,900,800,600);
+@import "color_palette";
+
+
+body {
+  background: $dark_charcoal;
+  color: $tan;
+//  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  a{
+    color: $tan;
+  }
+  h1, h2, h3, legend, label, button, .btn-sister-red{
+    font-style: normal;
+    font-weight: 800;
+  }
+  h4, h5, h6 {
+    font-weight: 800;
+  }
+  p, a, span {
+    font-style: normal;
+    font-weight: 400;
+  }
+  .panel {
+    border-radius: 0;
+  }
+}
+
+header{
+  text-align:  center;
+  margin-bottom: 50px;
+  h1{
+    font-size: 75px;
+
+  }
+  img {
+    padding-top: 25px;
+    width: 325px;
+    margin-left: 10px;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.top-buffer {
+  margin-top: 75px;
+}
+
+@-webkit-keyframes fadi {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadi {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+//fixed an offset error
+.glyphicon {
+  top: 0px;
+}
+
+/*--------Login/Registration--------*/
+
+#content {
+  background: $charcoal;
+}
+
+.authentication_panel {
+  background: $charcoal;
+  border: 0;
+  padding: 15px;
+  margin-top: 50px;
+  font-size: 16px;
+  color: $tan;
+  legend {
+    color: $tan;
+  }
+  span {
+    background: $white;
+    //    font-size: 15em;
+  }
+  input, textarea {
+
+    background-color : $white_light;
+
+  }
+  a{
+    color: $red_lighten;
+  }
+  .login_failure {
+    color: $red_lighten;
+    -webkit-animation: fadi 2s 1;
+    -moz-animation: fadi 2s 1;
+  }
+  .error_list ul, .error_list {
+    list-style: none;
+    color: red;
+    margin-top: -15px;
+    -webkit-animation: fadi 1s 1;
+    -moz-animation: fadi 1s 1;
+  }
+}
+.error_list {
+  list-style: none;
+  color: $red_lighten;
+  margin-top: -15px;
+  -webkit-animation: fadi 1s 1;
+  -moz-animation: fadi 1s 1;
+}
+
+//.btn-sister-red {
+//  background: $red;
+//  min-width: 200px;
+//  color: $white;
+//  box-shadow: 0 5px 0 $red_med_dark;
+//  &:hover {
+//      background-color: hsl(358, 76%, 40%);
+//      box-shadow: 0 6px 0 hsl(358, 76%, 30%)
+//  }
+//  &:active {
+//      background-color: hsl(358, 76%, 30%);
+//      box-shadow: 0 6px 0 hsl(358, 76%, 40%);
+//  }
+//}
+//
+//.btn-sister-red:hover{
+// background:$red_med_dark;
+// color: $white;
+// box-shadow: 0 5px 0 $red_dark;
+//
+//}
+//.btn-sister-red:active{
+// background: $red_dark;
+// color: $white;
+// box-shadow: 0 5px 0 $red;
+//}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-grey {
+  background: $grey;
+  min-width: 200px;
+  color: $white;
+  box-shadow: 0 5px 0 $grey_med_dark;
+  &:hover {
+    background-color: hsl(358, 76%, 40%);
+    box-shadow: 0 6px 0 hsl(358, 76%, 30%)
+  }
+  &:active {
+    background-color: hsl(358, 76%, 30%);
+    box-shadow: 0 6px 0 hsl(358, 76%, 40%);
+  }
+}
+
+.btn-grey:hover{
+  background:$grey_med_dark;
+  color: $white;
+  box-shadow: 0 5px 0 $grey_dark;
+
+}
+.btn-grey:active{
+  background: $grey_dark;
+  color: $white;
+  box-shadow: 0 5px 0 $grey_dark;
+}
+
+
+//.btn-sister-tan:hover{
+// background:$tan_med_dark;
+// color: $white;
+// box-shadow: 0 5px 0 $tan_dark;
+//
+//}
+//.btn-sister-tan:active{
+// background: $grey_dark;
+// color: $white;
+// box-shadow: 0 5px 0 $grey_dark;
+//}
+
+.btn-sister-tan {
+  background: $white;
+  min-width: 200px;
+  color: $charcoal;
+  box-shadow: 0 5px 0 $white_med_dark;
+  &:hover {
+    background-color: $white_med_dark;
+    box-shadow: 0 6px 0 $white_dark;
+    color: $dark_charcoal;
+  }
+  &:active {
+    background-color: $white_dark;
+    box-shadow: 0 6px 0 $white;
+  }
+}
+
+
+.navbar-default {
+  background-color: $grey;
+  color: $white;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-image: none;
+  filter: none;
+  -webkit-box-shadow: inset 0 1px 0 transparent !important;
+  -moz-box-shadow: inset 0 1px 0 transparent !important;
+  box-shadow: inset 0 1px 0 transparent !important;
+  border-color: transparent;
+  a {
+    color: $charcoal;
+  }
+  .navbar-brand{
+    color: $charcoal;
+    &:hover{
+      color: $white;
+    }
+  }
+  .navbar-nav li a{
+    color: $charcoal;
+    margin-top: -5px;
+    padding-bottom: 20px;
+    &:hover {
+      color: $white;
+      background-color: hsl(0, 0, 60%);
+    }
+  }
+  .navbar-nav ul{
+    li a{
+      padding: 10px;
+      &:hover {
+        color: $charcoal;
+      }
+    }
+  }
+}
+
+.person_menu {
+  img{
+    width: 35px;
+    padding-right: 5px;
+  }
+}

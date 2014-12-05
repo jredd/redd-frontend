@@ -4,26 +4,111 @@
   <meta charset="utf-8">
   <title>Ember Starter Kit</title>
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
-
-    {{outlet}}
+    <div class="container">
+      {{outlet}}
+      </div>
   </script>
 
-  <script type="text/x-handlebars" id="index">
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
+  <script type="text/x-handlebars" data-template-name="index">
+    {{partial 'nav'}}
+    <h1>welcome to redd asset manager</h1>
+    <p>stuff</p>
   </script>
 
-  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script type="text/x-handlebars" data-template-name="projects">
+    {{partial 'nav'}}
+    <h2>Projects</h2>
+    <p>This is the photos page bitch</p>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="departments">
+    {{partial 'nav'}}
+    <h2>Departments</h2>
+    <p>This is the photos page bitch</p>
+  </script>
+
+  <script type="text/x-handlebars" id="assets" data-template-name="assets">
+    {{partial 'nav'}}
+    <div id="content" class="row">
+      <div class="col-lg-12">
+        <h2>Projects Assets</h2>
+        <p></p>
+
+        {{#each model}}
+        <article>
+          <h3>{{name}}</h3>
+          <ul>
+            <li>Creator: {{created_by}}</li>
+            <li>Project: {{project}}</li>
+            <li>Current department: {{current_department}}</li>
+          </ul>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </script>
+
+  <!--LOGIN PAGE-->
+  <script type="text/x-handlebars" data-template-name="login">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 panel panel-default authentication_panel">
+        <form class="margin-base-vertical" {{action "login" on="submit"}}>
+          <fieldset>
+            <legend>LOGIN</legend>
+            {{#if login_failed}}
+            <div class="alert alert-danger">{{error_message}}</div>
+            {{/if}}
+
+            {{#if is_slow_connection}}
+            <div class="alert alert-info">The request seems to be taking more time than usual, please wait.</div>
+            {{/if}}
+            <div class="form-group">
+              <label>EMAIL</label>
+              <p class="input-group text-center ">
+                <span class="input-group-addon glyphicon glyphicon-user"><span class="icon-envelope"></span></span>
+                {{input class='form-control' value=username type='email' placeholder='Username' required=''}}
+              </p>
+            </div>
+            <div class="form-group">
+              <label>PASSWORD</label>
+              <p class="input-group text-center">
+                <span class="input-group-addon glyphicon glyphicon-lock"><span class="icon-envelope"></span></span>
+                {{input class='form-control' value=password type='password' placeholder='Password' required=''}}
+              </p>
+            </div>
+            <p class="text-center">
+              <button type="submit" class="btn btn-sister-tan btn-lg">LOGIN</button>
+            </p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="nav">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">redd</a>
+      <ul class="nav nav-pills pull-right">
+        <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
+        <li>{{#link-to 'departments'}}Departments{{/link-to}}</li>
+        <li>{{#link-to 'assets'}}Assets{{/link-to}}</li>
+        <li {{action 'logout'}}><a>logout</a></li>
+      </ul>
+    </nav>
+  </script>
+
+  <!--<script src="js/libs/jquery-1.10.2.js"></script>-->
+  <script src="js/libs/jquery-1.11.1.min.js"></script>
+  <script src="js/libs/jquery.cookie-1.4.1.min.js"></script>
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember-1.8.1.js"></script>
+  <script src="js/libs/bootstrap.js"></script>
   <script src="js/app.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
