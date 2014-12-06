@@ -54,17 +54,35 @@ body {
 @-webkit-keyframes fadi {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 @-moz-keyframes fadi {
   0% {
     opacity: 0; }
+
   100% {
     opacity: 1; } }
 .glyphicon {
   top: 0px; }
 
 /*--------Login/Registration--------*/
+.is_active {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: green;
+  border-radius: 15px;
+  margin-left: 10px; }
+
+.is_inactive {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #991c1f;
+  border-radius: 15px;
+  margin-left: 10px; }
+
 .authentication_panel {
   background: #2c2c2c;
   border: 0;
@@ -148,5 +166,3 @@ body {
     cursor: pointer; }
   #projects_content article:active {
     background: #3b3b3b; }
-
-/*# sourceMappingURL=main.css.map */

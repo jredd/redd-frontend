@@ -96,6 +96,24 @@ body {
 //  background: $charcoal;
 //}
 
+.is_active {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: green;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.is_inactive {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: $red;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
 .authentication_panel {
   background: $charcoal;
   border: 0;

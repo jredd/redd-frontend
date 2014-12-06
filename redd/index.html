@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ember Starter Kit</title>
+  <title>Redd Asset Manager</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
@@ -42,13 +42,11 @@
         <ul>
           <li>Creator: {{created_by}}</li>
           <li>Date Created: {{date_created}}</li>
-          <li class="is_active:is_inactive">Status: Inactive</li>
           {{#if is_active}}
-            <li class="is_active">Status: Active</li>
+            <li>Status: Active<span class="is_active"></span></li>
           {{/if}}
           {{#unless is_active}}
-          <p>{{is_active}}</p>
-            <li class="is_inactive">Status: Inactive</li>
+            <li>Status: Inactive<span class="is_inactive"></span></li>
           {{/unless}}
         </ul>
       </article>
