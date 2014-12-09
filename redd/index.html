@@ -203,7 +203,8 @@
                     <li>Status: Inactive<span class="is_inactive"></span></li>
                   {{/if}}
                   <li>Projects: <ul>
-                    {{#each content in project}}
+
+                    {{#each content in model.project}}
                     <li>{{#link-to "project" content.id}}{{content.name}}{{/link-to}}</li>
                     {{/each}}
                   </ul> </li>
@@ -235,12 +236,12 @@
                       </div>
                       <div class="row form-group">
                         <div class="col-lg-12">
-                          <div>{{view "select" class='form-control project_list'
+                          <div>{{view "select" name=project class='form-control'
                             multiple=true
-                            content=project
+                            contentBinding="project.content"
                             optionValuePath="content.id"
                             optionLabelPath="content.name"
-                            selection=model.project.content.content
+                            selectionBinding="model.project.content"
                             }}
                           </div>
                         </div>
@@ -338,7 +339,7 @@
                 <h2>{{name}}</h2>
                 <ul>
                   <li>Creator: {{created_by}}</li>
-                  <li>Project: {{project.content}}</li>
+                  <li>Project: {{project.content.name}}</li>
                 </ul>
               </section>
               <section class="col-lg-4">
@@ -380,7 +381,7 @@
               <h2>{{name}}</h2>
               <ul>
                 <li>Creator: {{created_by}}</li>
-                <li>Project: {{project.content}}</li>
+                <li>Project: {{model.project.content.name}}</li>
               </ul>
             </section>
             <section class="col-lg-4">
@@ -413,22 +414,30 @@
                       <div class="row form-group">
                         <span class="col-lg-12">Date Created: {{format-date date_created}}</span>
                       </div>
-                      <div class="row form-group ">
-                        <span class="col-lg-12">Project: {{project}}</span>
-                      </div>
+                    <div class="row form-group ">
+
+                      <label class="col-lg-2">Project:</label>
+                        <span class="col-lg-9">{{view "select" class='form-control'
+                          content=project
+                          contentBinding="project.content"
+                          optionValuePath="content.id"
+                          optionLabelPath="content.name"
+                          selectionBinding="model.project.content"
+                        }}</span>
+                    </div>
                     </section>
                   <section class="col-lg-4">
                     <div class="row form-group ">
-                      <span class="col-lg-12">Departments:</span>
+                      <span class="col-lg-11">Department:</span>
                     </div>
                     <div class="row form-group">
                       <div class="col-lg-12">
-                        <div>{{view "select" class='form-control'
+                        <div>{{view "select" name=department class='form-control'
                           multiple=true
-                          content=current_department.relation.content
+                          contentBinding="department.content"
                           optionValuePath="content.id"
                           optionLabelPath="content.name"
-                          selection=model.current_department.content
+                          selectionBinding="model.current_department.content"
                           }}
                         </div>
                       </div>
@@ -502,16 +511,24 @@
               </div>
             </div>
             <div class="form-group ">
-              <label>Project Status:</label>
+              <label>Department Status:
               {{input type="checkbox" name="is_active" checked=is_active}}
               </label>
             </div>
           </div>
+            <label>Projects:</label>
+
           <div class="form-group ">
-            <div>{{view "select" multiple=true content=project  class='form-control'}}</div>
+            <div>{{view "select" name=project class='form-control'
+              multiple=true
+              contentBinding="project.content"
+              optionValuePath="content.id"
+              optionLabelPath="content.name"
+              selectionBinding="model.project.content"
+              }}</div>
           </div>
           <p class="text-center">
-            <button type="submit" class="btn btn-red btn-lg">Create Project</button>
+            <button type="submit" class="btn btn-red btn-lg">Create Department</button>
           </p>
         </fieldset>
         </form>

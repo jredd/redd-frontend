@@ -186,6 +186,20 @@ App.DepartmentRoute = App.AuthenticatedRoute.extend({
     return this.store.find('department', params.department_id).then(function(data) {
       return data
     });
+  },
+  setupController: function(controller, model) {
+    controller.set('project', this.store.findAll('project'));
+    controller.set("model", model);
+  }
+});
+
+App.DepartmentCreateRoute = App.AuthenticatedRoute.extend({
+  model: function() {
+    return this.store.createRecord('department');
+  },
+  setupController: function(controller, model) {
+    controller.set('project', this.store.findAll('project'));
+    controller.set("model", model);
   }
 });
 
@@ -195,7 +209,6 @@ App.AssetsRoute = App.AuthenticatedRoute.extend({
       return data
     });
   }
-
 });
 
 App.AssetRoute = App.AuthenticatedRoute.extend({
@@ -203,13 +216,16 @@ App.AssetRoute = App.AuthenticatedRoute.extend({
     return this.store.find('asset', params.asset_id).then(function(data) {
       return data
     });
+  },
+  setupController: function(controller, model) {
+    controller.set('department', this.store.findAll('department'));
+    controller.set("model", model);
+    controller.set('project', this.store.findAll('project'));
   }
 });
 
 App.AssetCreateRoute = App.AuthenticatedRoute.extend({
   model: function() {
-    var new_asset = this.store.createRecord('asset')
-
     return this.store.createRecord('asset');
   },
   setupController: function(controller, model) {
@@ -224,6 +240,7 @@ App.LoginRoute = Ember.Route.extend({
     controller.reset();
   }
 });
+
 App.IndexRoute = App.AuthenticatedRoute.extend();
 
 // CONTROLLERS
@@ -237,6 +254,8 @@ App.AssetController = Ember.ObjectController.extend({
   asset_creation_failed: false,
   error_message: null,
   is_editing: false,
+  department: null,
+  project: null,
   actions: {
     edit: function () {
       this.set('is_editing', true);
@@ -304,6 +323,7 @@ App.DepartmentController = Ember.ObjectController.extend({
   department_creation_failed: false,
   error_message: null,
   is_editing: false,
+  project: null,
   actions: {
     edit: function () {
       this.set('is_editing', true);
@@ -336,25 +356,25 @@ App.DepartmentController = Ember.ObjectController.extend({
   }
 });
 
-App.DepartmentCreateController = Ember.ArrayController.extend({
+App.DepartmentCreateController = Ember.ObjectController.extend({
   //username: this.controllerFor('login').get('user_name'),
-  name: null,
+  needs: ['login'],
+  project: null,
+  department: null,
+  selected_project: null,
   actions: {
     create_department: function() {
-      var data = this.getProperties('name', 'is_active');
-      data['created_by'] = this.controllerFor('login').get('user_name')
-      data['date_created'] = new Date()
-      //console.log(this.get('model').create())
-      var department = this.store.createRecord('department', data);
-      department.save().then(function(resp){
-        console.log(resp)
-        this.transitionTo('departments');
+      this.set('created_by', this.get('controllers.login').get('user_name'));
+      this.set('date_created', new Date());
+      this.get('model').save().then(function(resp){
+        console.log('success!', resp);
+        this.transitionToRoute('departments');
       }.bind(this), function(resp){
         if (resp.status === 400){
           this.set("error_message", resp.responseText);
         }else {
           console.log(resp);
-          alert('an error occured communicating with the server.')
+          alert('an error occurred communicating with the server.')
         }
         this.set("department_creation_failed", true);
       }.bind(this));
