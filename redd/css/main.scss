@@ -6,9 +6,6 @@ body {
   color: $tan;
   font-family: "brandon-grotesque", sans-serif;
   font-style: normal;
-  a{
-    color: $tan;
-  }
   h1{
     font-weight: 700;
   }
@@ -33,14 +30,24 @@ body {
   .panel {
     border-radius: 0;
   }
-  article li {
-    font-size: 1.5em;
+  label, section {
+    font-size: 1.5em !important;
+  }
+  a {
+    text-decoration: none;
+    color: $tan;
+    &:hover {
+      color: $white;
+    }
+    &:active, &:visited {
+      color: $tan;
+    }
   }
 }
 
 .navbar-brand {
   font-size: 3em;
-  color: $red_light;
+  color: $red_light !important;
   font-family: "uppercut-angle",sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -48,7 +55,7 @@ body {
     font-size: 150%;
   }
   &:hover {
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -100,7 +107,7 @@ body {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: green;
+  background: $green;
   border-radius: 15px;
   margin-left: 10px;
 }
@@ -114,7 +121,7 @@ body {
   margin-left: 10px;
 }
 
-.authentication_panel {
+.authentication_panel, .project_create_panel {
   background: $charcoal;
   border: 0;
   padding: 15px;
@@ -165,15 +172,18 @@ body {
 .btn-grey {
    background: $grey;
    min-width: 200px;
-   color: $white;
+   color: $charcoal;
    &:hover {
-     background-color: hsl(358, 76%, 40%);
+     background-color: $grey_med_dark;
+     color: $white;
    }
    &:active {
-     background-color: hsl(358, 76%, 30%);
+     background-color: $grey_dark;
    }
- }
-
+}
+//#project_create {
+//  padding: 15px;
+//}
 
 .btn-red {
   background: $red;
@@ -210,7 +220,15 @@ body {
     padding-right: 5px;
   }
 }
-
+.create {
+  font-size: 1.5em;
+  color: $green !important;
+  cursor: pointer;
+  &:hover {
+    color: $green_med_dark !important;
+    text-decoration: none;
+  }
+}
 
 #projects_content {
   article {
@@ -220,14 +238,173 @@ body {
     ul {
       li {
         list-style: none;
+        font-size: 1.5em !important;
       }
     }
     &:hover {
       background: $charcoal_med_light;
-      cursor: pointer;
+      color: $tan;
+      .inspection_icon {
+        display: block;
+      }
+
     }
-    &:active {
-      background: $charcoal_light;
+    &:hover {
+      background: $charcoal_med_light;
+      .inspection_icon {
+        a {
+          display: block;
+
+        }
+
+      }
     }
+  }
+}
+
+#project_content {
+  article {
+    margin: 15px 0;
+    padding: 15px;
+    background: $charcoal;
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+
+}
+
+.department_content {
+  a {
+    .inspection_icon {
+      display: block;
+    }
+  }
+  section {
+
+    margin-top: 30px;
+    .section_wrapper {
+      background: $charcoal;
+      padding: 15px;
+      h3 {
+        border-bottom: 1px solid $tan;
+        padding-bottom: 5px;
+      }
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          ul {
+            padding-left: 35px;
+          }
+        }
+      }
+      label {
+        font-size: 1em !important;
+      }
+      .glyphicon {
+        font-size: .75em !important;
+        margin: 5px;
+      }
+//      &:hover {
+//        .inspection_icon {
+//          display: block;
+//          font-size: 1.5em;
+//          margin-left: -10px;
+//          margin-top: -15px;
+//        }
+//        background: $charcoal_med_light;
+//      }
+      &:hover {
+        background: $charcoal_med_light;
+
+        .inspection_icon {
+          margin-left: -25px;
+          margin-top: -15px;
+          a {
+            font-size: 1.5em;
+            display: block;
+
+          }
+
+        }
+      }
+    }
+
+  }
+}
+.edit_btn, .trash_btn, .save_btn, .cancel_edit_btn {
+  margin-right: 15px;
+  font-size: 1.25em !important;
+  cursor: pointer;
+}
+
+.inspection_icon {
+  display: block;
+  a {
+    float: left;
+    position: absolute;
+    font-size: 2em;
+    display: none;
+    z-index: 20;
+    margin-top: -10px;
+    margin-left: -18px;
+  }
+
+
+}
+.asset_content {
+  article {
+
+    margin: 15px 0;
+    padding: 15px;
+    background: $charcoal;
+    section{
+      padding: 10px;
+      ul {
+        li {
+          list-style: none;
+          font-size: 1em;
+        }
+      }
+      img {
+        display: block;
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+        padding: 15px
+      }
+    }
+    h3 {
+      border-top: 1px solid $tan;
+      padding-top: 15px;
+    }
+    &:hover {
+      background: $charcoal_med_light;
+      .inspection_icon {
+        a {
+          display: block;
+
+        }
+
+      }
+    }
+    label {
+      font-size: 1em !important;
+    }
+    .tool_box {
+      float: left;
+      margin-left: -15px;
+
+      .edit_btn, .trash_btn, .save_btn, .cancel_edit_btn {
+        margin-right: 15px;
+        font-size: 1.25em !important;
+        cursor: pointer;
+      }
+    }
+
   }
 }
