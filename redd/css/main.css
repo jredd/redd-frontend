@@ -3,8 +3,6 @@ body {
   color: #e3dec5;
   font-family: "brandon-grotesque", sans-serif;
   font-style: normal; }
-  body a {
-    color: #e3dec5; }
   body h1 {
     font-weight: 700; }
   body h2, body legend, body button {
@@ -21,19 +19,26 @@ body {
     font-weight: 300; }
   body .panel {
     border-radius: 0; }
-  body article li {
-    font-size: 1.5em; }
+  body label, body section {
+    font-size: 1.5em !important; }
+  body a {
+    text-decoration: none;
+    color: #e3dec5; }
+    body a:hover {
+      color: #e2e3e4; }
+    body a:active, body a:visited {
+      color: #e3dec5; }
 
 .navbar-brand {
   font-size: 3em;
-  color: #c42428;
+  color: #c42428 !important;
   font-family: "uppercut-angle",sans-serif;
   font-style: normal;
   font-weight: 400; }
   .navbar-brand:first-letter {
     font-size: 150%; }
   .navbar-brand:hover {
-    color: #e2e3e4; }
+    color: #e2e3e4 !important; }
 
 .nav-pills li a {
   border-radius: 0; }
@@ -54,13 +59,11 @@ body {
 @-webkit-keyframes fadi {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-moz-keyframes fadi {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 .glyphicon {
@@ -71,7 +74,7 @@ body {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: green;
+  background: #4dca4a;
   border-radius: 15px;
   margin-left: 10px; }
 
@@ -83,26 +86,26 @@ body {
   border-radius: 15px;
   margin-left: 10px; }
 
-.authentication_panel {
+.authentication_panel, .project_create_panel {
   background: #2c2c2c;
   border: 0;
   padding: 15px;
   margin-top: 50px;
   font-size: 16px;
   color: #e3dec5; }
-  .authentication_panel legend {
+  .authentication_panel legend, .project_create_panel legend {
     color: #e3dec5; }
-  .authentication_panel span {
+  .authentication_panel span, .project_create_panel span {
     background: #e2e3e4; }
-  .authentication_panel input, .authentication_panel textarea {
+  .authentication_panel input, .authentication_panel textarea, .project_create_panel input, .project_create_panel textarea {
     background-color: #eaebeb; }
-  .authentication_panel a {
+  .authentication_panel a, .project_create_panel a {
     color: #c42428; }
-  .authentication_panel .login_failure {
+  .authentication_panel .login_failure, .project_create_panel .login_failure {
     color: #c42428;
     -webkit-animation: fadi 2s 1;
     -moz-animation: fadi 2s 1; }
-  .authentication_panel .error_list ul, .authentication_panel .error_list {
+  .authentication_panel .error_list ul, .authentication_panel .error_list, .project_create_panel .error_list ul, .project_create_panel .error_list {
     list-style: none;
     color: red;
     margin-top: -15px;
@@ -122,11 +125,12 @@ body {
 .btn-grey {
   background: #bfbfbf;
   min-width: 200px;
-  color: #e2e3e4; }
+  color: #2c2c2c; }
   .btn-grey:hover {
-    background-color: #b4181e; }
+    background-color: #8c8c8c;
+    color: #e2e3e4; }
   .btn-grey:active {
-    background-color: #871216; }
+    background-color: #595959; }
 
 .btn-red {
   background: #991c1f;
@@ -155,14 +159,114 @@ body {
   width: 35px;
   padding-right: 5px; }
 
+.create {
+  font-size: 1.5em;
+  color: #4dca4a !important;
+  cursor: pointer; }
+  .create:hover {
+    color: #33a631 !important;
+    text-decoration: none; }
+
 #projects_content article {
   margin: 15px 0;
   padding: 15px;
   background: #2c2c2c; }
   #projects_content article ul li {
-    list-style: none; }
+    list-style: none;
+    font-size: 1.5em !important; }
   #projects_content article:hover {
     background: #343434;
-    cursor: pointer; }
-  #projects_content article:active {
-    background: #3b3b3b; }
+    color: #e3dec5; }
+    #projects_content article:hover .inspection_icon {
+      display: block; }
+  #projects_content article:hover {
+    background: #343434; }
+    #projects_content article:hover .inspection_icon a {
+      display: block; }
+
+#project_content article {
+  margin: 15px 0;
+  padding: 15px;
+  background: #2c2c2c; }
+  #project_content article ul li {
+    list-style: none; }
+
+.department_content a .inspection_icon {
+  display: block; }
+.department_content section {
+  margin-top: 30px; }
+  .department_content section .section_wrapper {
+    background: #2c2c2c;
+    padding: 15px; }
+    .department_content section .section_wrapper h3 {
+      border-bottom: 1px solid #e3dec5;
+      padding-bottom: 5px; }
+    .department_content section .section_wrapper ul {
+      padding: 0; }
+      .department_content section .section_wrapper ul li {
+        list-style: none; }
+        .department_content section .section_wrapper ul li ul {
+          padding-left: 35px; }
+    .department_content section .section_wrapper label {
+      font-size: 1em !important; }
+    .department_content section .section_wrapper .glyphicon {
+      font-size: .75em !important;
+      margin: 5px; }
+    .department_content section .section_wrapper:hover {
+      background: #343434; }
+      .department_content section .section_wrapper:hover .inspection_icon {
+        margin-left: -25px;
+        margin-top: -15px; }
+        .department_content section .section_wrapper:hover .inspection_icon a {
+          font-size: 1.5em;
+          display: block; }
+
+.edit_btn, .trash_btn, .save_btn, .cancel_edit_btn {
+  margin-right: 15px;
+  font-size: 1.25em !important;
+  cursor: pointer; }
+
+.inspection_icon {
+  display: block; }
+  .inspection_icon a {
+    float: left;
+    position: absolute;
+    font-size: 2em;
+    display: none;
+    z-index: 20;
+    margin-top: -10px;
+    margin-left: -18px; }
+
+.asset_content article {
+  margin: 15px 0;
+  padding: 15px;
+  background: #2c2c2c; }
+  .asset_content article section {
+    padding: 10px; }
+    .asset_content article section ul li {
+      list-style: none;
+      font-size: 1em; }
+    .asset_content article section img {
+      display: block;
+      vertical-align: middle;
+      width: 100%;
+      height: auto;
+      padding: 15px; }
+  .asset_content article h3 {
+    border-top: 1px solid #e3dec5;
+    padding-top: 15px; }
+  .asset_content article:hover {
+    background: #343434; }
+    .asset_content article:hover .inspection_icon a {
+      display: block; }
+  .asset_content article label {
+    font-size: 1em !important; }
+  .asset_content article .tool_box {
+    float: left;
+    margin-left: -15px; }
+    .asset_content article .tool_box .edit_btn, .asset_content article .tool_box .trash_btn, .asset_content article .tool_box .save_btn, .asset_content article .tool_box .cancel_edit_btn {
+      margin-right: 15px;
+      font-size: 1.25em !important;
+      cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */
