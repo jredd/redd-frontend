@@ -1,0 +1,35 @@
+.login {
+  background-color: #f5f7f7;
+  color: #303030;
+  border: 1px solid #f5f7f7;
+  margin-top: 150px !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+  .login .header {
+    border-bottom: 1px solid #f5f7f7; }
+  .login h1 {
+    color: #303030; }
+  .login label {
+    color: #303030; }
+  .login div form {
+    margin-bottom: 50px; }
+
+*, section {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  background-color: #303030; }
+
+.pull-right {
+  float: right !important; }
+
+.auto-margin {
+  display: block;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=app.css.map */

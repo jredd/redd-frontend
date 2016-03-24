@@ -1,0 +1,20 @@
+<section class="large-4 columns login">
+    <div class="row auto-margin header">
+        <h1 class="columns">Welcome!</h1>
+    </div>
+    <div class="row no-float">
+        <form class="large-12 columns" {{action 'authenticate' on='submit'}}>
+            <div class="">
+                <label for="identification">Email</label>
+              {{input value=identification placeholder='Email' class='form-control' required='true'}}
+            </div>
+            <div>
+                <label for="password">Password</label>
+              {{input value=password placeholder='Password' class='form-control' type='password' required='true'}}
+            </div>
+            <button type="submit" class="button auto-margin ">Login</button>
+        </form>
+    </div>
+</section>
+
+{{outlet}}
