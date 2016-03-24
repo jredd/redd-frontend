@@ -1,0 +1,26 @@
+@import 'color_pallete';
+
+
+.login {
+  background-color: $white;
+  color: $charcoal;
+  border: 1px solid $white;
+  margin-top: 150px !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  .header {
+    border-bottom: 1px solid $white;
+  }
+  h1 {
+    color: $charcoal;
+  }
+  label {
+    color: $charcoal;
+  }
+  div{
+    form {
+      margin-bottom: 50px;
+    }
+  }
+}

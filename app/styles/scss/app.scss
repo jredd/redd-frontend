@@ -1,0 +1,18 @@
+@import 'color_pallete';
+@import 'login_modal';
+
+*, section {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: $charcoal;
+}
+
+.pull-right{float:right!important}
+.auto-margin{display:block;margin:0 auto}
+

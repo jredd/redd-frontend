@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#if session.isAuthenticated}}
+    <header id="header">
 
-{{outlet}}
+    </header>
+
+{{/if}}
+<section id="wrapper" class="row">
+  {{outlet}}
+</section>
