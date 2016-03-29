@@ -4,13 +4,12 @@ import Base from 'ember-simple-auth/authenticators/base';
 const { RSVP, isEmpty, run } = Ember;
 
 export default Base.extend({
-
   clientId: null,
-
   serverTokenEndpoint: 'http://104.236.96.7/api-token-auth/',
   serverTokenRevocationEndpoint: null,
-  refreshAccessTokens: false,
+  refreshAccessTokens: true,
   _refreshTokenTimeout: null,
+
   restore(data) {
     return new RSVP.Promise((resolve, reject) => {
       const now                 = (new Date()).getTime();
@@ -39,7 +38,7 @@ export default Base.extend({
       const scopesString = Ember.makeArray(scope).join(' ');
       if (!Ember.isEmpty(scopesString)) {
         data.scope = scopesString;
-        console.log(data)
+        console.log(data);
       }
       this.makeRequest(serverTokenEndpoint, data).then((response) => {
         run(() => {

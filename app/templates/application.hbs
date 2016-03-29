@@ -1,9 +1,8 @@
-{{#if session.isAuthenticated}}
-    <header id="header">
-
-    </header>
-
-{{/if}}
+<div class="menu">
+  {{#if session.isAuthenticated}}
+      <a {{action 'invalidateSession'}}>Logout</a>
+  {{/if}}
+</div>
 <section id="wrapper" class="row">
   {{outlet}}
 </section>
