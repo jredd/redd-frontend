@@ -6,7 +6,8 @@ const { RSVP, isEmpty, run } = Ember;
 export default Base.extend({
 
   clientId: null,
-  serverTokenEndpoint: 'http://127.0.0.1:8000/api-token-auth/',
+
+  serverTokenEndpoint: 'http://104.236.96.7/api-token-auth/',
   serverTokenRevocationEndpoint: null,
   refreshAccessTokens: false,
   _refreshTokenTimeout: null,
