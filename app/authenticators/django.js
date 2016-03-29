@@ -4,11 +4,15 @@ import Base from 'ember-simple-auth/authenticators/base';
 const { RSVP, isEmpty, run } = Ember;
 
 export default Base.extend({
+
   clientId: null,
   serverTokenEndpoint: 'http://104.236.96.7/api-token-auth/',
+  serverRefreshTokenEndpoint: 'http://104.236.96.7/api-token-refresh/',
   serverTokenRevocationEndpoint: null,
   refreshAccessTokens: true,
   _refreshTokenTimeout: null,
+  tokenExpiresIn: 300, // Five mins
+  tokenExpireLeeway: 60, // leeway amount
 
   restore(data) {
     return new RSVP.Promise((resolve, reject) => {
@@ -16,6 +20,7 @@ export default Base.extend({
       const refreshAccessTokens = this.get('refreshAccessTokens');
       if (!isEmpty(data['expires_at']) && data['expires_at'] < now) {
         if (refreshAccessTokens) {
+          console.log(data)
           this._refreshAccessToken(data['expires_in'], data['refresh_token']).then(resolve, reject);
         } else {
           reject();
@@ -24,6 +29,7 @@ export default Base.extend({
         if (isEmpty(data['access_token'])) {
           reject();
         } else {
+          this._scheduleAccessTokenRefresh(data['expires_in'], data['expires_at'], data['refresh_token']);
           this._scheduleAccessTokenRefresh(data['expires_in'], data['expires_at'], data['refresh_token']);
           resolve(data);
         }
@@ -42,8 +48,10 @@ export default Base.extend({
       }
       this.makeRequest(serverTokenEndpoint, data).then((response) => {
         run(() => {
-          const expiresAt = this._absolutizeExpirationTime(response['expires_in']);
-          //this._scheduleAccessTokenRefresh(response['expires_in'], expiresAt, response['refresh_token']);
+          const expiresAt = this._absolutizeExpirationTime();
+          const expires_in = this._expiresInTime();
+          console.log(response)
+          this._scheduleAccessTokenRefresh(expires_in, expiresAt, response['token']);
           if (!isEmpty(expiresAt)) {
             response = Ember.merge(response, { 'expires_at': expiresAt });
           }
@@ -121,10 +129,10 @@ export default Base.extend({
     }
   },
   _refreshAccessToken(expiresIn, refreshToken) {
-    const data                = { 'grant_type': 'refresh_token', 'refresh_token': refreshToken };
-    const serverTokenEndpoint = this.get('serverTokenEndpoint');
+    const data                = { 'grant_type': 'token', 'refresh_token': refreshToken };
+    const serverRefreshTokenEndpoint = this.get('serverRefreshTokenEndpoint');
     return new RSVP.Promise((resolve, reject) => {
-      this.makeRequest(serverTokenEndpoint, data).then((response) => {
+      this.makeRequest(serverRefreshTokenEndpoint, data).then((response) => {
         run(() => {
           expiresIn       = response['expires_in'] || expiresIn;
           refreshToken    = response['refresh_token'] || refreshToken;
@@ -140,9 +148,11 @@ export default Base.extend({
       });
     });
   },
-  _absolutizeExpirationTime(expiresIn) {
-    if (!isEmpty(expiresIn)) {
-      return new Date((new Date().getTime()) + expiresIn * 1000).getTime();
-    }
+  _absolutizeExpirationTime() {
+    return new Date((new Date().getTime()) + (this.tokenExpiresIn + 60) * 1000).getTime();
+  },
+  _expiresInTime(expiresIn) {
+      return new Date((new Date().getTime()) + (this.tokenExpiresIn + this.tokenExpireLeeway) * 1000).getTime();
+
   }
 });
