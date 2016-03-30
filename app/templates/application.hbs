@@ -1,6 +1,7 @@
 <div class="menu">
   {{#if session.isAuthenticated}}
       <a {{action 'invalidateSession'}}>Logout</a>
+    <a {{action 'getSessionInfo'}}>get info</a>
   {{/if}}
 </div>
 <section id="wrapper" class="row">
