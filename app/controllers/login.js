@@ -10,7 +10,13 @@ export default Ember.Controller.extend({
 
       this.get('session').authenticate('authenticator:django', identification, password).catch((reason) => {
         console.log(reason);
-        this.set('errorMessage', reason.error);
+        console.log(reason.non_field_errors[0]);
+        reason = reason.non_field_errors[0]
+        if ( reason === "Unable to login with provided credentials."){
+          this.set('errorMessage', 'Invalid Username or Password');
+        }else{
+          this.set('errorMessage', 'Bad Request to server');
+        }
       });
     }
   }

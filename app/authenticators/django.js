@@ -27,7 +27,6 @@ export default Base.extend({
         if (isEmpty(data['token'])) {
           reject();
         } else {
-          console.log('gonna schedule toke refresh');
           this._scheduleAccessTokenRefresh(data['expires_in'], data['expires_at'], data['token']);
           resolve(data);
         }
@@ -46,6 +45,7 @@ export default Base.extend({
         run(() => {
           const expiresAt = this._absolutizeExpirationTime();
           const expiresIn = this._expiresInTime();
+          this.clientId = response.id;
           this._scheduleAccessTokenRefresh(expiresIn, expiresAt, response.token);
 
           var stored_token = {token: response.token, id: response.id};
@@ -56,7 +56,9 @@ export default Base.extend({
           resolve(stored_token);
         });
       }, (xhr) => {
+        console.log(xhr);
         run(null, reject, xhr.responseJSON || xhr.responseText);
+        //run(null, reject, xhr.responseText);
       });
     });
   },
@@ -95,15 +97,7 @@ export default Base.extend({
       dataType:    'json',
       contentType: 'application/x-www-form-urlencoded'
     };
-    const clientId = this.get('clientId');
-    if (!isEmpty(clientId)) {
-      const base64ClientId = window.btoa(clientId.concat(':'));
-      Ember.merge(options, {
-        headers: {
-          Authorization: `Basic ${base64ClientId}`
-        }
-      });
-    }
+
     return Ember.$.ajax(options);
   },
   _scheduleAccessTokenRefresh(expiresIn, expiresAt, refreshToken) {
@@ -126,7 +120,7 @@ export default Base.extend({
   _refreshAccessToken(expiresIn, token) {
     const data                = { grant_type: 'refresh_token', token: token };
     const serverRefreshTokenEndpoint = this.get('serverRefreshTokenEndpoint');
-    console.log(data);
+
     return new RSVP.Promise((resolve, reject) => {
       this.makeRequest(serverRefreshTokenEndpoint, data).then((response) => {
         run(() => {
