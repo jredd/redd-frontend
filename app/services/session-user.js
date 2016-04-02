@@ -14,9 +14,8 @@ export default Ember.Service.extend({
         return this.get('store').findRecord('user', accountId).then((user) => {
           this.set('user', user);
           resolve();
-          //}, reject);
-          //}, reject);
-        });
+          }, reject);
+        //});
       } else {
         resolve();
       }
