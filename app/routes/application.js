@@ -6,7 +6,9 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   sessionUser: service('session-user'),
-
+  CurrentUser() {
+    return this._loadCurrentUser();
+  },
   beforeModel() {
     return this._loadCurrentUser();
   },
@@ -16,6 +18,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   },
   _loadCurrentUser() {
     return this.get('sessionUser').loadCurrentUser();
+  },
+  aftermodel() {
+    return this.store.findRecord('user', 1);
   }
+  //aftermodel() {
+  //  return this.store.peekRecord('user', 1);
+  //}
 });
 

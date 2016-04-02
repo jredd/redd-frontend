@@ -1,10 +1,12 @@
 import Ember from 'ember';
 
+//const { service } = Ember.inject;
+
+
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
-  currentUser: function() {
-    return this.get('session.id');
-  },
+  //sessionUser: service('session-user'),
+
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
@@ -14,15 +16,8 @@ export default Ember.Controller.extend({
     },
     getSessionInfo() {
       console.log(this.get('session.isAuthenticated'));
-      console.log(this.get('session.data.authenticated.access_token'));
+      console.log(this.get('session.data.authenticated.token'));
     },
-    //restore() {
-    //  //let { identification, password } = this.getProperties('identification', 'password');
-    //
-    //  this.get('session').restore().catch((reason) => {
-    //    console.log(reason);
-    //    this.set('errorMessage', reason.error);
-    //  });
-    //}
+
   }
 });

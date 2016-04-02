@@ -12,6 +12,9 @@ export default Ember.Service.extend({
       const accountId = this.get('session.data.authenticated.id');
       if (!Ember.isEmpty(accountId)) {
         return this.get('store').findRecord('user', accountId).then((user) => {
+          console.log(user);
+          console.log(user.first_name);
+          //console.log(user.name);
           this.set('user', user);
           resolve();
           }, reject);
