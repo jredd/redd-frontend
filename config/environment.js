@@ -52,7 +52,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.API_HOST = 'http://104.236.96.7';
-    //ENV.APP.API_NAMESPACE = 'api';
+    ENV.APP.API_NAMESPACE = null;
   }
 
   return ENV;
