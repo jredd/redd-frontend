@@ -12,6 +12,13 @@
                 <label for="password">Password</label>
               {{input value=password placeholder='Password' class='form-control' type='password' required='true'}}
             </div>
+            {{#if errorMessage}}
+                <div class="alert alert-danger">
+                    <p>
+                        <strong>Login failed: </strong>{{errorMessage}}
+                    </p>
+                </div>
+            {{/if}}
             <button type="submit" class="button auto-margin ">Login</button>
         </form>
     </div>
