@@ -23,7 +23,11 @@
   box-sizing: border-box; }
 
 html, body {
-  background-color: #303030; }
+  background-color: #303030;
+  color: #f5f7f7; }
+
+.alert {
+  color: #DF1E25; }
 
 .pull-right {
   float: right !important; }

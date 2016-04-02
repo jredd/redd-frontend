@@ -11,8 +11,12 @@
 
 html, body {
   background-color: $charcoal;
+  color: $white;
 }
 
+.alert {
+  color: $red;
+}
 .pull-right{float:right!important}
 .auto-margin{display:block;margin:0 auto}
 
