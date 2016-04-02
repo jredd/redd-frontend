@@ -4,7 +4,6 @@ const { service } = Ember.inject;
 
 export default Ember.Controller.extend({
   session: service('session'),
-
   actions: {
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
@@ -15,5 +14,4 @@ export default Ember.Controller.extend({
       });
     }
   }
-
 });
