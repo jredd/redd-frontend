@@ -6,11 +6,12 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   sessionUser: service('session-user'),
-  CurrentUser() {
-    return this._loadCurrentUser();
-  },
+  session: Ember.inject.service('session'),
   beforeModel() {
-    return this._loadCurrentUser();
+    //console.log(this.get('session.isAuthenticated'));
+    if (this.get('session.isAuthenticated')) {
+      return this._loadCurrentUser();
+    }
   },
   sessionAuthenticated() {
     this._super(...arguments);
@@ -18,12 +19,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   },
   _loadCurrentUser() {
     return this.get('sessionUser').loadCurrentUser();
-  },
-  aftermodel() {
-    return this.store.findRecord('user', 1);
   }
-  //aftermodel() {
-  //  return this.store.peekRecord('user', 1);
-  //}
+
 });
 

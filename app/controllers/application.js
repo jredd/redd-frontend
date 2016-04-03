@@ -5,7 +5,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
-  //sessionUser: service('session-user'),
 
   actions: {
     invalidateSession() {
@@ -17,7 +16,6 @@ export default Ember.Controller.extend({
     getSessionInfo() {
       console.log(this.get('session.isAuthenticated'));
       console.log(this.get('session.data.authenticated.token'));
-    },
-
+    }
   }
 });

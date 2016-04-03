@@ -2,7 +2,7 @@
   {{#if session.isAuthenticated}}
       <a {{action 'invalidateSession'}}>Logout</a>
     <a {{action 'getSessionInfo'}}>get info</a>
-    <a {{action 'currentUser'}}>Current User</a>
+    <a {{action 'getUSer'}}>Current User</a>
     {{#if model.first_name}}
     {{model.first_name}}
   {{else}}
@@ -10,7 +10,7 @@
     {{/if}}
   {{/if}}
 </div>
-{{currentUser}}
+
 <section id="wrapper" class="row">
   {{outlet}}
 </section>

@@ -1,2 +1,8 @@
-<h1>Welcome {{model.first_name}}!</h1>
+<h1>Welcome
+  {{#if currentUser.content.first_name}}
+    {{currentUser.content.first_name}}
+  {{else}}
+    {{currentUser.content.email}}
+  {{/if}}
+</h1>
 {{outlet}}
