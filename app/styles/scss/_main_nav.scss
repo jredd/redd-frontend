@@ -1,0 +1,104 @@
+@import 'color_pallete';
+
+nav {
+  > ul > li {
+    margin: 0 5px;
+    padding-top: 7px;
+  }
+  > ul > li > a {
+    //height: 65px;
+    display: block;
+    //font-size: 1.5em;
+    color: $white;
+
+    &:hover {
+      color: $white;
+      transition: .25s;
+    }
+  }
+  ul {
+    z-index: 500;
+    text-align: left;
+    display: inline;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    li:hover ul, li:focus ul {
+      display: block;
+    }
+    li {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5em;
+      padding: 5px 10px;
+      &:hover {
+        background-color: $red_med_dark;
+        color: $white;
+        transition: .25s;
+      }
+      ul {
+        background-color: rgba($charcoal, .75);
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        display: none;
+        white-space: nowrap;
+        right: 0;
+        overflow: hidden;
+        li {
+          font-size: 1em;
+          padding: 0;
+          display: block;
+          a {
+            color: $white;
+            display: block;
+            padding: 10px 14px 10px 14px;
+          }
+          a:hover {
+            background-color: $red_med_dark;
+            color: $white;
+            transition: .25s;
+          }
+        }
+      }
+    }
+  //  li:hover {
+  //    color: #fff;
+  //    svg {
+  //      fill: $green;
+  //      transition: .25s;
+  //    }
+  //  }
+  }
+
+  //.nav-ico-libraries {
+  //  width: 85px;
+  //}
+  //
+  //.nav-ico-projects {
+  //  width: 46px;
+  //}
+  //
+  //.nav-ico-vehicles {
+  //  width: 105px;
+  //}
+  //
+  //.nav-ico-imports {
+  //  width: 57px;
+  //}
+  //
+  //.nav-ico-rendering {
+  //  width: 80px;
+  //}
+  //
+  //.nav-ico-create {
+  //  width: 20px;
+  //}
+  //
+  //.nav-ico-settings {
+  //  width: 75px;
+  //  //padding-right: 10px;
+  //  //margin-right: 15px;
+  //}
+}

@@ -1,5 +1,6 @@
 @import 'color_pallete';
 @import 'login_modal';
+@import 'main_nav';
 
 *, section {
   margin: 0;
@@ -12,6 +13,7 @@
 html, body {
   background-color: $charcoal;
   color: $white;
+  font-family: "brandon-grotesque", sans-serif;
 }
 
 .alert {
@@ -19,4 +21,39 @@ html, body {
 }
 .pull-right{float:right!important}
 .auto-margin{display:block;margin:0 auto}
+
+
+.navbar-brand {
+  font-size: 3em;
+  color: $red_light !important;
+  font-family: "uppercut-angle",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  &:first-letter {
+    font-size: 150%;
+  }
+  &:hover {
+    color: $white !important;
+  }
+  a{
+    color: $red_light;
+  }
+}
+
+.nav-btn {
+  color: $white;
+  cursor: pointer;
+  font-weight: 200;
+  font-size: 1.25em;
+  &:hover {
+    background: $red_med_dark !important;
+    color: $white_med_dark;
+  }
+  &:active {
+    background: $red !important;
+    color: $white_dark;
+  }
+}
+
+
 
