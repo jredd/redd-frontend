@@ -21,9 +21,6 @@ nav > ul > li {
 nav > ul > li > a {
   display: block;
   color: #e2e3e4; }
-  nav > ul > li > a:hover {
-    color: #e2e3e4;
-    transition: .25s; }
   nav > ul > li > a:active {
     color: #e2e3e4; }
   nav > ul > li > a:visited {
@@ -43,15 +40,23 @@ nav ul {
     cursor: pointer;
     font-size: 1.5em;
     padding: 5px 10px; }
-    nav ul li:hover {
+    nav ul li a {
+      padding: 5px 10px;
+      color: #e2e3e4;
+      display: block; }
+    nav ul li a:hover {
       background-color: #7b1619;
       color: #e2e3e4;
       transition: .25s; }
+    nav ul li .active {
+      background-color: #7b1619;
+      color: #e2e3e4;
+      padding: 5px 10px; }
     nav ul li ul {
       background-color: rgba(44, 44, 44, 0.75);
       padding: 0;
       position: absolute;
-      top: 48px;
+      top: 53px;
       display: none;
       white-space: nowrap;
       right: 0;
@@ -61,13 +66,21 @@ nav ul {
         padding: 0;
         display: block; }
         nav ul li ul li a {
+          padding: 5px 10px;
           color: #e2e3e4;
-          display: block;
-          padding: 10px 14px 10px 14px; }
+          display: block; }
         nav ul li ul li a:hover {
           background-color: #7b1619;
           color: #e2e3e4;
           transition: .25s; }
+
+.button {
+  background-color: #3B52A3; }
+  .button:hover {
+    background-color: #425bb6;
+    transition: .25s; }
+  .button:active {
+    background-color: #3B52A3; }
 
 *, section {
   margin: 0;

@@ -1,7 +1,7 @@
 {{yield}}
 <ul class="pull-right">
     <li class="">
-      {{#link-to 'projects.index'}}Projects{{/link-to}}
+      {{#link-to 'projects.index' activeClass='active'}}Projects{{/link-to}}
     </li>
     <li class="">
       {{#link-to 'departments.index'}}Departments{{/link-to}}
@@ -10,11 +10,11 @@
       {{#link-to 'assets.index'}}Assets{{/link-to}}
     </li>
     <li class="">
-      {{#if currentUser.content.first_name}}
+      <a>{{#if currentUser.content.first_name}}
         {{currentUser.content.first_name}}
       {{else}}
         {{currentUser.content.email}}
-      {{/if}}
+      {{/if}}</a>
         <ul class="nav_sub">
             <li><a href="#">Change Password</a></li>
             <li><a {{action 'invalidateSession'}}>Logout</a></li>

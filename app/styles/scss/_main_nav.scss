@@ -11,10 +11,10 @@ nav {
     //font-size: 1.5em;
     color: $white;
 
-    &:hover {
-      color: $white;
-      transition: .25s;
-    }
+    //&:hover {
+    //  color: $white;
+    //  transition: .25s;
+    //}
     &:active {
       color: $white;
     }
@@ -38,16 +38,34 @@ nav {
       cursor: pointer;
       font-size: 1.5em;
       padding: 5px 10px;
-      &:hover {
+      //&:hover {
+      //  background-color: $red_med_dark;
+      //  color: $white;
+      //  transition: .25s;
+      //}
+      a {
+        padding: 5px 10px;
+        color: $white;
+        display: block;
+        //padding: 10px 14px 10px 14px;
+      }
+      a:hover {
         background-color: $red_med_dark;
         color: $white;
         transition: .25s;
       }
+      .active {
+        background-color: $red_med_dark;
+        color: $white;
+        //transition: .25s;
+        padding: 5px 10px;
+      }
       ul {
         background-color: rgba($charcoal, .75);
         padding: 0;
+        //background: $blue;
         position: absolute;
-        top: 48px;
+        top: 53px;
         display: none;
         white-space: nowrap;
         right: 0;
@@ -57,15 +75,17 @@ nav {
           padding: 0;
           display: block;
           a {
+            padding: 5px 10px;
             color: $white;
             display: block;
-            padding: 10px 14px 10px 14px;
+            //padding: 10px 14px 10px 14px;
           }
           a:hover {
             background-color: $red_med_dark;
             color: $white;
             transition: .25s;
           }
+
         }
       }
     }

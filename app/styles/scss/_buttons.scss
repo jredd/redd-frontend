@@ -1,0 +1,11 @@
+
+.button {
+  background-color: $blue;
+  &:hover {
+    background-color: $blue_light;
+    transition: .25s;
+  }
+  &:active {
+    background-color: $blue;
+  }
+}
