@@ -1,2 +1,16 @@
 {{outlet}}
 <h1>Projects</h1>
+
+
+{{#each model as |project|}}
+  <section class="project_snippet">
+    <h4>{{project.name}}</h4>
+    {{#if project.icon}}
+      {{project.icon}}
+    {{else}}
+      <img src="/assets/default_project_icon.jpg">
+    {{/if}}
+    <span>{{project.date_created}}</span>
+    <span>{{project.is_active}}</span>
+  </section>
+{{/each}}

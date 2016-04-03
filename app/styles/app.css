@@ -82,6 +82,9 @@ nav ul {
   .button:active {
     background-color: #3B52A3; }
 
+.project_snippet {
+  background-color: #425bb6; }
+
 *, section {
   margin: 0;
   padding: 0;
