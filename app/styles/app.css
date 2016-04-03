@@ -24,6 +24,10 @@ nav > ul > li > a {
   nav > ul > li > a:hover {
     color: #e2e3e4;
     transition: .25s; }
+  nav > ul > li > a:active {
+    color: #e2e3e4; }
+  nav > ul > li > a:visited {
+    color: #e2e3e4; }
 nav ul {
   z-index: 500;
   text-align: left;
@@ -53,7 +57,7 @@ nav ul {
       right: 0;
       overflow: hidden; }
       nav ul li ul li {
-        font-size: 1em;
+        font-size: .75em;
         padding: 0;
         display: block; }
         nav ul li ul li a {

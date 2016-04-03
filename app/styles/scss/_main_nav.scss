@@ -15,6 +15,12 @@ nav {
       color: $white;
       transition: .25s;
     }
+    &:active {
+      color: $white;
+    }
+    &:visited {
+      color: $white;
+    }
   }
   ul {
     z-index: 500;
@@ -47,7 +53,7 @@ nav {
         right: 0;
         overflow: hidden;
         li {
-          font-size: 1em;
+          font-size: .75em;
           padding: 0;
           display: block;
           a {
