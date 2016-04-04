@@ -1,6 +1,6 @@
 {{outlet}}
 <div class="row">
-  <h1>Projects</h1>
+  <h1 class="column">Projects</h1>
 </div>
 <div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-on="medium">
   {{#each model as |project|}}
@@ -25,8 +25,8 @@
           </li>
       </ul>
           <div class="button-group">
-            <div class="button">Edit </div>
-            <div class="button">Details</div>
+            <a href="projects" class="button">Edit </a>
+            <a href="projects" class="button">Details</a>
           </div>
         </div>
 

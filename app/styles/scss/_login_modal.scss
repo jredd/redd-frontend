@@ -2,25 +2,26 @@
 
 
 .login {
-  background-color: $white;
-  color: $charcoal;
   border: 1px solid $white;
   margin-top: 150px !important;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px $tan inset;
+  }
   .header {
     border-bottom: 1px solid $white;
   }
   h1 {
-    color: $charcoal;
+    color: $white;
   }
   label {
-    color: $charcoal;
+    color: $white;
   }
   div{
     form {
-      margin-bottom: 50px;
+      margin-bottom: 25px;
     }
   }
 }
