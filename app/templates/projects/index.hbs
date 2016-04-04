@@ -1,16 +1,35 @@
 {{outlet}}
-<h1>Projects</h1>
+<div class="row">
+  <h1>Projects</h1>
+</div>
+<div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-on="medium">
+  {{#each model as |project|}}
+    <section class="project_snippet column">
+        <div class="callout">
+      <label>{{project.name}}</label>
+      <ul>
+          <li>
+            {{#if project.icon}}
+              {{project.icon}}
+            {{else}}
+              <img src="/assets/default_project_icon.jpg">
+            {{/if}}
+          </li>
+          <li>{{project.date_created}}</li>
+          <li>
+            {{#if project.is_active}}
+                Status:<span class="is_active"></span>
+            {{else}}
+                Status:<span class="is_inactive"></span>
+            {{/if}}
+          </li>
+      </ul>
+          <div class="button-group">
+            <div class="button">Edit </div>
+            <div class="button">Details</div>
+          </div>
+        </div>
 
-
-{{#each model as |project|}}
-  <section class="project_snippet">
-    <h4>{{project.name}}</h4>
-    {{#if project.icon}}
-      {{project.icon}}
-    {{else}}
-      <img src="/assets/default_project_icon.jpg">
-    {{/if}}
-    <span>{{project.date_created}}</span>
-    <span>{{project.is_active}}</span>
-  </section>
-{{/each}}
+    </section>
+  {{/each}}
+</div>

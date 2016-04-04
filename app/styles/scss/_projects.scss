@@ -1,5 +1,67 @@
 @import 'color_pallete';
 
 .project_snippet {
-  background-color:  $blue_light;
+  //background-color:  $blue_light;
+  //padding: 15px;
+  //border: 1px solid $white;
+  //float: left !important;
+  //margin-left: 10px;
+  label {
+    color: $white;
+    font-size: 1.5em;
+    padding: 0;
+    font-weight: 500;
+  }
+  .callout {
+    background-color: $charcoal;
+    border: 1px solid $white;
+    overflow: hidden;
+    //&:hover {
+    //  background-color: rgba($white, .50);
+    //  transition: .5s;
+    //  cursor: pointer;
+    //  color: $charcoal;
+    //  //overflow: hidden;
+    //  h6 {
+    //    color: $charcoal
+    //  }
+    //}
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 0;
+        color: $white;
+      }
+    }
+    .button {
+      //float: left;
+      background-color: $red;
+      width: 50%;
+    }
+  }
+
+  .is_active {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: $green;
+    border-radius: 15px;
+    margin-left: 10px; }
+
+  .is_inactive {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: $red;
+    border-radius: 15px;
+    margin-left: 10px;
+  }
+  .slider {
+    height: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 }

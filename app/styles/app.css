@@ -15,64 +15,67 @@
   .login div form {
     margin-bottom: 50px; }
 
-nav > ul > li {
-  margin: 0 5px;
-  padding-top: 7px; }
-nav > ul > li > a {
+nav {
   display: block;
-  color: #e2e3e4; }
-  nav > ul > li > a:active {
+  margin-top: 50px; }
+  nav > ul > li {
+    margin: 0 5px;
+    padding-top: 7px; }
+  nav > ul > li > a {
+    display: block;
     color: #e2e3e4; }
-  nav > ul > li > a:visited {
-    color: #e2e3e4; }
-nav ul {
-  z-index: 500;
-  text-align: left;
-  display: inline;
-  margin: 0;
-  list-style: none;
-  padding: 0; }
-  nav ul li:hover ul, nav ul li:focus ul {
-    display: block; }
-  nav ul li {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 1.5em;
-    padding: 5px 10px; }
-    nav ul li a {
-      padding: 5px 10px;
-      color: #e2e3e4;
+    nav > ul > li > a:active {
+      color: #e2e3e4; }
+    nav > ul > li > a:visited {
+      color: #e2e3e4; }
+  nav ul {
+    z-index: 500;
+    text-align: left;
+    display: inline;
+    margin: 0;
+    list-style: none;
+    padding: 0; }
+    nav ul li:hover ul, nav ul li:focus ul {
       display: block; }
-    nav ul li a:hover {
-      background-color: #7b1619;
-      color: #e2e3e4;
-      transition: .25s; }
-    nav ul li .active {
-      background-color: #7b1619;
-      color: #e2e3e4;
+    nav ul li {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5em;
       padding: 5px 10px; }
-    nav ul li ul {
-      background-color: rgba(44, 44, 44, 0.75);
-      padding: 0;
-      position: absolute;
-      top: 53px;
-      display: none;
-      white-space: nowrap;
-      right: 0;
-      overflow: hidden; }
-      nav ul li ul li {
-        font-size: .75em;
-        padding: 0;
+      nav ul li a {
+        padding: 5px 10px;
+        color: #e2e3e4;
         display: block; }
-        nav ul li ul li a {
-          padding: 5px 10px;
-          color: #e2e3e4;
+      nav ul li a:hover {
+        background-color: #7b1619;
+        color: #e2e3e4;
+        transition: .25s; }
+      nav ul li .active {
+        background-color: #7b1619;
+        color: #e2e3e4;
+        padding: 5px 10px; }
+      nav ul li ul {
+        background-color: rgba(44, 44, 44, 0.75);
+        padding: 0;
+        position: absolute;
+        top: 53px;
+        display: none;
+        white-space: nowrap;
+        right: 0;
+        overflow: hidden; }
+        nav ul li ul li {
+          font-size: .75em;
+          padding: 0;
           display: block; }
-        nav ul li ul li a:hover {
-          background-color: #7b1619;
-          color: #e2e3e4;
-          transition: .25s; }
+          nav ul li ul li a {
+            padding: 5px 10px;
+            color: #e2e3e4;
+            display: block; }
+          nav ul li ul li a:hover {
+            background-color: #7b1619;
+            color: #e2e3e4;
+            transition: .25s; }
 
 .button {
   background-color: #3B52A3; }
@@ -82,10 +85,46 @@ nav ul {
   .button:active {
     background-color: #3B52A3; }
 
-.project_snippet {
-  background-color: #425bb6; }
+.project_snippet label {
+  color: #e2e3e4;
+  font-size: 1.5em;
+  padding: 0;
+  font-weight: 500; }
+.project_snippet .callout {
+  background-color: #2c2c2c;
+  border: 1px solid #e2e3e4;
+  overflow: hidden; }
+  .project_snippet .callout ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .project_snippet .callout ul li {
+      padding: 0;
+      color: #e2e3e4; }
+  .project_snippet .callout .button {
+    background-color: #991c1f;
+    width: 50%; }
+.project_snippet .is_active {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #4dca4a;
+  border-radius: 15px;
+  margin-left: 10px; }
+.project_snippet .is_inactive {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #991c1f;
+  border-radius: 15px;
+  margin-left: 10px; }
+.project_snippet .slider {
+  height: 30px;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
 
-*, section {
+*, section, div, span, li, ul {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;

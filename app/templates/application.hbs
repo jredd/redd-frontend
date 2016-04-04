@@ -1,16 +1,12 @@
 {{#if session.isAuthenticated}}
-    <header class="">
-        <div class="row">
-            <logo class="large-4 columns app-header navbar-brand">
-              {{#link-to 'index'}}Redd{{/link-to}}
-            </logo>
-            <div class="large-8 columns">
-              {{main-nav}}
-            </div>
-        </div>
-    </header>
-{{/if}}
+    <header class="row">
+        <logo class="large-4 column app-header navbar-brand">
+          {{#link-to 'index'}}Redd{{/link-to}}
+        </logo>
 
-<section id="wrapper" class="row">
-  {{outlet}}
-</section>
+          {{main-nav class="large-8 column"}}
+
+    </header>
+    <hr>
+{{/if}}
+{{outlet}}

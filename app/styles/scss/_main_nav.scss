@@ -6,15 +6,8 @@ nav {
     padding-top: 7px;
   }
   > ul > li > a {
-    //height: 65px;
     display: block;
-    //font-size: 1.5em;
     color: $white;
-
-    //&:hover {
-    //  color: $white;
-    //  transition: .25s;
-    //}
     &:active {
       color: $white;
     }
@@ -22,6 +15,8 @@ nav {
       color: $white;
     }
   }
+  display: block;
+  margin-top: 50px;
   ul {
     z-index: 500;
     text-align: left;
