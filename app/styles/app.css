@@ -79,7 +79,8 @@ nav {
 
 .button {
   background-color: #e2e3e4;
-  color: #2c2c2c; }
+  color: #2c2c2c;
+  font-weight: 500; }
   .button:hover {
     background-color: #991c1f;
     transition: .25s; }
@@ -106,16 +107,7 @@ nav {
       padding: 0;
       color: #e2e3e4; }
   .project_snippet .callout .button {
-    color: #2c2c2c;
-    background-color: #e2e3e4;
     width: 50%; }
-    .project_snippet .callout .button:hover {
-      background-color: #991c1f;
-      color: #e2e3e4; }
-    .project_snippet .callout .button:focus {
-      box-shadow: 0 0 10px #e2e3e4; }
-    .project_snippet .callout .button:active {
-      box-shadow: 0 0 10px #e2e3e4; }
 .project_snippet .is_active {
   display: inline-block;
   width: 15px;

@@ -2,6 +2,7 @@
 .button {
   background-color: $white;
   color: $charcoal;
+  font-weight: 500;
   &:hover {
     background-color: $red;
     transition: .25s;

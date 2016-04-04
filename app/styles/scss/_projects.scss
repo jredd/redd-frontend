@@ -36,21 +36,7 @@
       }
     }
     .button {
-      color: $charcoal;
-      background-color: $white;
       width: 50%;
-      //border-color: $white;
-
-      &:hover {
-        background-color: $red;
-        color: $white;
-      }
-      &:focus {
-        box-shadow: 0 0 10px $white;
-      }
-      &:active {
-        box-shadow: 0 0 10px $white;
-      }
     }
   }
 
