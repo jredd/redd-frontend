@@ -1,0 +1,27 @@
+{{yield}}
+<div class="callout">
+    <label>{{project.name}}</label>
+    <ul>
+        <li>
+          {{#if project.icon}}
+            {{project.icon}}
+          {{else}}
+              <img src="/assets/default_project_icon.jpg">
+          {{/if}}
+        </li>
+        <li>{{format-date project.date_created}}</li>
+        <li>
+          {{#if project.is_active}}
+              Status:<span class="is_active"></span>
+          {{else}}
+              Status:<span class="is_inactive"></span>
+          {{/if}}
+        </li>
+    </ul>
+    <div class="button-group">
+
+        <a href="projects" data-reveal-id="myModal" class="button" {{action 'edit'}}>Edit</a>
+        <a href="projects" class="button" {{action 'details'}}>Details</a>
+    </div>
+</div>
+
