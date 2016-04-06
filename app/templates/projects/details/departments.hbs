@@ -1,4 +1,9 @@
 {{outlet}}
 <div class="column">
     <h1>Departments</h1>
+  <ul>
+  {{#each model as |department|}}
+      <li>{{department}}</li>
+    {{/each}}
+  </ul>
 </div>
