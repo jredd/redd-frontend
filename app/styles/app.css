@@ -90,43 +90,59 @@ nav {
     background-color: #c42428;
     outline-color: #e2e3e4; }
 
-.project_snippet label {
+.project_snippet label, .project_details label {
   color: #e2e3e4;
   font-size: 1.5em;
   padding: 0;
   font-weight: 500; }
-.project_snippet .callout {
+.project_snippet ul, .project_details ul {
+  list-style: none; }
+.project_snippet .callout, .project_details .callout {
   background-color: #2c2c2c;
   border: 1px solid #e2e3e4;
   overflow: hidden; }
-  .project_snippet .callout ul {
+  .project_snippet .callout ul, .project_details .callout ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-    .project_snippet .callout ul li {
+    .project_snippet .callout ul li, .project_details .callout ul li {
       padding: 0;
       color: #e2e3e4; }
-  .project_snippet .callout .button {
-    width: 50%; }
-.project_snippet .is_active {
+.project_snippet .is_active, .project_details .is_active {
   display: inline-block;
   width: 15px;
   height: 15px;
   background: #4dca4a;
   border-radius: 15px;
   margin-left: 10px; }
-.project_snippet .is_inactive {
+.project_snippet .is_inactive, .project_details .is_inactive {
   display: inline-block;
   width: 15px;
   height: 15px;
   background: #991c1f;
   border-radius: 15px;
   margin-left: 10px; }
-.project_snippet .slider {
+.project_snippet .slider, .project_details .slider {
   height: 30px;
   text-align: center;
   margin: 0;
   padding: 0; }
+
+.other-details .nav {
+  list-style: none; }
+  .other-details .nav li {
+    float: left; }
+    .other-details .nav li a {
+      color: #2c2c2c;
+      background-color: #e2e3e4;
+      padding: 5px 10px; }
+      .other-details .nav li a:hover {
+        color: #e2e3e4;
+        background-color: #991c1f;
+        transition: .5s; }
+    .other-details .nav li .active {
+      background-color: #991c1f;
+      color: #e2e3e4; }
 
 *, section, div, span, li, ul {
   margin: 0;

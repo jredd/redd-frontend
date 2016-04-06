@@ -1,31 +1,21 @@
 @import 'color_pallete';
 
-.project_snippet {
-  //background-color:  $blue_light;
-  //padding: 15px;
-  //border: 1px solid $white;
-  //float: left !important;
-  //margin-left: 10px;
+
+
+.project_snippet, .project_details {
   label {
     color: $white;
     font-size: 1.5em;
     padding: 0;
     font-weight: 500;
   }
+  ul {
+    list-style: none;
+  }
   .callout {
     background-color: $charcoal;
     border: 1px solid $white;
     overflow: hidden;
-    //&:hover {
-    //  background-color: rgba($white, .50);
-    //  transition: .5s;
-    //  cursor: pointer;
-    //  color: $charcoal;
-    //  //overflow: hidden;
-    //  h6 {
-    //    color: $charcoal
-    //  }
-    //}
     ul {
       list-style: none;
       padding: 0;
@@ -35,9 +25,7 @@
         color: $white;
       }
     }
-    .button {
-      width: 50%;
-    }
+
   }
 
   .is_active {
@@ -61,5 +49,28 @@
     text-align: center;
     margin: 0;
     padding: 0;
+  }
+}
+
+.other-details {
+  .nav {
+    list-style: none;
+    li {
+      float: left;
+      a {
+        color: $charcoal;
+        background-color: $white;
+        padding: 5px 10px;
+        &:hover {
+          color: $white;
+          background-color: $red;
+          transition: .5s;
+        }
+      }
+      .active {
+        background-color: $red;
+        color: $white;
+      }
+    }
   }
 }
