@@ -18,10 +18,8 @@
           {{/if}}
         </li>
     </ul>
-    <div class="button-group">
-
-        <a href="projects" data-reveal-id="myModal" class="button" {{action 'edit'}}>Edit</a>
-        <a href="projects" class="button" {{action 'details'}}>Details</a>
+    <div class="">
+        {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
     </div>
 </div>
 
