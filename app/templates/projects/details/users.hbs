@@ -1,3 +1,9 @@
-<div class="column">
-    <h1>Users</h1>
+<div class="row">
+    <h1 class="column">Users</h1>
 </div>
+<div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-on="medium">
+    {{#each model as |user|}}
+        {{user-item user=user}}
+    {{/each}}
+</div>
+{{outlet}}

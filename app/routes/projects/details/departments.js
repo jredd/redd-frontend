@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return ['skdjfhs', 'sdfs'];
+    return this.store.findAll('department');
+    //return this.store.findAll('project');
   }
 });

@@ -1,3 +1,7 @@
-<div class="column">
+{{outlet}}
+<div class="row">
     <h1>Assets</h1>
+        {{#each model as |asset|}}
+            {{asset}}
+        {{/each}}
 </div>
