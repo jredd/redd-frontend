@@ -1,12 +1,18 @@
 {{yield}}
 <div class="callout">
-    <label>{{user.name}}</label>
+    <label>
+    {{#if user.full_name}}
+      {{user.full_name}}
+    {{else}}
+      {{user.email}}
+    {{/if}}
+    </label>
     <ul>
         <li>
             {{#if user.icon}}
                 {{user.icon}}
             {{else}}
-                <img src="/assets/default_department_icon.jpg">
+                <img src="/assets/default_user_icon.jpg">
             {{/if}}
         </li>
         <li>{{format-date user.date_created}}</li>
