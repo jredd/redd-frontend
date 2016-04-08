@@ -1,0 +1,25 @@
+{{yield}}
+<div class="callout">
+    <label>{{asset.name}}</label>
+    <ul>
+        <li>
+          {{#if asset.icon}}
+            {{asset.icon}}
+          {{else}}
+              <img src="/assets/default_asset_icon.jpg">
+          {{/if}}
+        </li>
+        <li>{{format-date asset.date_created}}</li>
+        <li>
+          {{#if asset.is_active}}
+              Status:<span class="is_active"></span>
+          {{else}}
+              Status:<span class="is_inactive"></span>
+          {{/if}}
+        </li>
+    </ul>
+    <div class="">
+      {{#link-to "projects.details.departments" asset.id class="expanded button"}}More{{/link-to}}
+    </div>
+</div>
+
