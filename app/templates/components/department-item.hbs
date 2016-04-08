@@ -1,0 +1,25 @@
+{{yield}}
+<div class="callout">
+    <label>{{department.name}}</label>
+    <ul>
+        <li>
+          {{#if department.icon}}
+            {{department.icon}}
+          {{else}}
+              <img src="/assets/default_project_icon.jpg">
+          {{/if}}
+        </li>
+        <li>{{format-date department.date_created}}</li>
+        <li>
+          {{#if department.is_active}}
+              Status:<span class="is_active"></span>
+          {{else}}
+              Status:<span class="is_inactive"></span>
+          {{/if}}
+        </li>
+    </ul>
+    <div class="">
+      {{#link-to "projects.details.departments" department.id class="expanded button"}}More{{/link-to}}
+    </div>
+</div>
+
