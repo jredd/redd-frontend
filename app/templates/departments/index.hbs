@@ -1,4 +1,9 @@
 {{outlet}}
 <div class="row">
-    <h1>Departments</h1>
+    <h1 class="column">Departments</h1>
+</div>
+<div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-on="medium">
+  {{#each model as |department|}}
+    {{project-item model=department }}
+  {{/each}}
 </div>
