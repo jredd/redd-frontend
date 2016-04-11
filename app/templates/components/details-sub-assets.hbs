@@ -8,15 +8,15 @@
               <label>{{sub-asset.name}}</label>
               <ul>
                   <li>
-                    {{#if project.icon}}
-                      {{project.icon}}
+                    {{#if sub-asset.icon}}
+                      {{sub-asset.icon}}
                     {{else}}
                         <img src="/assets/default_project_icon.jpg">
                     {{/if}}
                   </li>
-                  <li>{{format-date project.date_created}}</li>
+                  <li>{{format-date sub-asset.date_created}}</li>
                   <li>
-                    {{#if project.is_active}}
+                    {{#if sub-asset.is_active}}
                         Status:<span class="is_active"></span>
                     {{else}}
                         Status:<span class="is_inactive"></span>
@@ -24,7 +24,7 @@
                   </li>
               </ul>
               <div class="">
-                {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
+                {{#link-to "projects.details.departments" sub-asset.id class="expanded button"}}More{{/link-to}}
               </div>
           </div>
       </section>

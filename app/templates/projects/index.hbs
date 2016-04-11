@@ -2,8 +2,32 @@
 <div class="row">
   <h1 class="column">Projects</h1>
 </div>
-<div class="row small-up-2 medium-up-3 large-up-4" data-equalizer data-equalize-on="medium">
+<div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
   {{#each model as |project|}}
-    {{project-item project=project}}
+    <section class="column">
+      <div class="callout">
+          <label>{{project.name}}</label>
+          <ul>
+              <li>
+                {{#if project.icon}}
+                  {{project.icon}}
+                {{else}}
+                    <img src="/assets/default_project_icon.jpg">
+                {{/if}}
+              </li>
+              <li>{{format-date project.date_created}}</li>
+              <li>
+                {{#if project.is_active}}
+                    Status:<span class="is_active"></span>
+                {{else}}
+                    Status:<span class="is_inactive"></span>
+                {{/if}}
+              </li>
+          </ul>
+          <div class="">
+            {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
+          </div>
+      </div>
+    </section>
   {{/each}}
 </div>
