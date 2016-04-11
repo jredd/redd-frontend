@@ -3,15 +3,15 @@
       {{#if icon}}
         {{icon}}
       {{else}}
-          <img src="/assets/default_department_icon.jpg">
+          <img src="/assets/default_asset_icon.jpg">
       {{/if}}
     </div>
     <div class="media-object-section project_details">
-        <label>{{department.name}}</label>
+        <label>{{model.name}}</label>
         <ul>
-            <li>Date: {{format-date department.date_created}}</li>
+            <li>Date: {{format-date model.date_created}}</li>
             <li>
-              {{#if department.is_active}}
+              {{#if model.is_active}}
                   Status:<span class="is_active"></span>
               {{else}}
                   Status:<span class="is_inactive"></span>
@@ -26,7 +26,6 @@
         <li>{{#link-to "assets.details.sub-assets" activeClass='active'}}Sub-Assets{{/link-to}}</li>
         <li>{{#link-to "assets.details.projects" activeClass='active'}}Projects{{/link-to}}</li>
         <li>{{#link-to "assets.details.users" activeClass='active'}}Users{{/link-to}}</li>
-        <li>{{#link-to "assets.details.assets" activeClass='active'}}Assets{{/link-to}}</li>
         <li>{{#link-to "assets.details.tasks" activeClass='active'}}Tasks{{/link-to}}</li>
         <li>{{#link-to "assets.details.danger" activeClass='active'}}Stranger Danger{{/link-to}}</li>
     </ul>

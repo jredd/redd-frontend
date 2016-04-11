@@ -7,7 +7,7 @@ export default DS.Model.extend({
   date_created: attr('date'),
   last_modified: attr('date'),
   created_by: belongsTo('user'),
-  check_out: attr('boolean'),
+  checked_out: attr('boolean'),
   project: belongsTo('project'),
   current_checked_out_user: belongsTo('user'),
   location: attr('string'),

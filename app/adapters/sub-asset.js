@@ -3,7 +3,7 @@ import DRFAdapter from './drf';
 
 export default DRFAdapter.extend({
   host: 'http://104.236.96.7',
-  namespace: 'sub-assets',
+  namespace: 'assets',
   session: Ember.inject.service('session'),
   headers: Ember.computed('session.data.authenticated.access_token', function() {
     return {

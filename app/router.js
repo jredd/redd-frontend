@@ -43,7 +43,6 @@ Router.map(function() {
     });
   });
 
-  this.route('department');
 });
 
 export default Router;
