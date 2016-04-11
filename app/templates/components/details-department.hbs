@@ -1,0 +1,33 @@
+<div class="row">
+    <h1 class="column">Departments</h1>
+</div>
+<div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
+  {{#each departments as |department|}}
+    <section class="column">
+        <div class="callout">
+            <label>{{department.name}}</label>
+            <ul>
+                <li>
+                  {{#if department.icon}}
+                    {{department.icon}}
+                  {{else}}
+                      <img src="/assets/default_department_icon.jpg">
+                  {{/if}}
+                </li>
+                <li>{{format-date department.date_created}}</li>
+                <li>
+                  {{#if department.is_active}}
+                      Status:<span class="is_active"></span>
+                  {{else}}
+                      Status:<span class="is_inactive"></span>
+                  {{/if}}
+                </li>
+            </ul>
+            <div class="">
+              {{#link-to "projects.details.departments" department.id class="expanded button"}}More{{/link-to}}
+            </div>
+        </div>
+    </section>
+  {{/each}}
+</div>
+{{outlet}}

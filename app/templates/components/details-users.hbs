@@ -1,0 +1,39 @@
+<div class="">
+    <h1 class="column">Users</h1>
+</div>
+<div class="small-up-2 medium-up-3 large-up-4 tiled-list">
+  {{#each users as |user|}}
+      <section class="column">
+          <div class="callout">
+              <label>
+                {{#if user.name}}
+                  {{user.name}}
+                {{else}}
+                  {{user.email}}
+                {{/if}}
+              </label>
+              <ul>
+                  <li>
+                    {{#if user.icon}}
+                      {{user.icon}}
+                    {{else}}
+                        <img src="/assets/default_user_icon.jpg">
+                    {{/if}}
+                  </li>
+                  <li>{{format-date project.date_created}}</li>
+                  <li>
+                    {{#if project.is_active}}
+                        Status:<span class="is_active"></span>
+                    {{else}}
+                        Status:<span class="is_inactive"></span>
+                    {{/if}}
+                  </li>
+              </ul>
+              <div class="">
+                {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
+              </div>
+          </div>
+      </section>
+  {{/each}}
+</div>
+{{outlet}}

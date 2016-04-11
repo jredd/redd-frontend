@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="media-object-section">
+      {{#if icon}}
+        {{icon}}
+      {{else}}
+          <img src="/assets/default_department_icon.jpg">
+      {{/if}}
+    </div>
+    <div class="media-object-section project_details">
+        <label>{{department.name}}</label>
+        <ul>
+            <li>Date: {{format-date department.date_created}}</li>
+            <li>
+              {{#if department.is_active}}
+                  Status:<span class="is_active"></span>
+              {{else}}
+                  Status:<span class="is_inactive"></span>
+              {{/if}}
+            </li>
+        </ul>
+    </div>
+</div>
+<hr>
+<div class="row other-details">
+    <ul class="nav">
+        <li>{{#link-to "assets.details.sub-assets" activeClass='active'}}Sub-Assets{{/link-to}}</li>
+        <li>{{#link-to "assets.details.projects" activeClass='active'}}Projects{{/link-to}}</li>
+        <li>{{#link-to "assets.details.users" activeClass='active'}}Users{{/link-to}}</li>
+        <li>{{#link-to "assets.details.assets" activeClass='active'}}Assets{{/link-to}}</li>
+        <li>{{#link-to "assets.details.tasks" activeClass='active'}}Tasks{{/link-to}}</li>
+        <li>{{#link-to "assets.details.danger" activeClass='active'}}Stranger Danger{{/link-to}}</li>
+    </ul>
+    <div class="">
+      {{outlet}}
+    </div>
+</div>

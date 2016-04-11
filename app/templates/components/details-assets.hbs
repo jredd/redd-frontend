@@ -1,23 +1,22 @@
-{{outlet}}
-<div class="row">
+<div class="">
     <h1 class="column">Assets</h1>
 </div>
-<div class="row small-up-2 medium-up-3 large-up-4 tiled-list tiled-list">
-  {{#each model as |asset|}}
+<div class="small-up-2 medium-up-3 large-up-4 tiled-list">
+  {{#each assets as |asset|}}
       <section class="column">
           <div class="callout">
               <label>{{asset.name}}</label>
               <ul>
                   <li>
-                    {{#if asset.icon}}
-                      {{asset.icon}}
+                    {{#if project.icon}}
+                      {{project.icon}}
                     {{else}}
                         <img src="/assets/default_asset_icon.jpg">
                     {{/if}}
                   </li>
-                  <li>{{format-date asset.date_created}}</li>
+                  <li>{{format-date project.date_created}}</li>
                   <li>
-                    {{#if asset.is_active}}
+                    {{#if project.is_active}}
                         Status:<span class="is_active"></span>
                     {{else}}
                         Status:<span class="is_inactive"></span>
@@ -25,9 +24,10 @@
                   </li>
               </ul>
               <div class="">
-                {{#link-to "assets.details.projects" asset.id class="expanded button"}}More{{/link-to}}
+                {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
               </div>
           </div>
       </section>
   {{/each}}
 </div>
+{{outlet}}
