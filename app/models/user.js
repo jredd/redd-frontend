@@ -17,7 +17,7 @@ export default DS.Model.extend({
   //'departments',
   //'projects',
   avatar: attr('string'),
-  full_name: Ember.computed('first_name', 'last_name', function() {
+  name: Ember.computed('first_name', 'last_name', function() {
     const first_name = this.get('first_name');
     const last_name = this.get('last_name');
 
