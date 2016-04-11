@@ -22,11 +22,27 @@ Router.map(function() {
 
   this.route('departments', function() {
     this.route('index', {path: '/'});
+    this.route('details', {path: '/:id'}, function(){
+      this.route('projects', {path: '/projects'});
+      this.route('tasks', {path: '/tasks'});
+      this.route('assets', {path: '/assets'});
+      this.route('users', {path: '/users'});
+      this.route('danger', {path: '/danger'});
+    });
   });
 
   this.route('assets', function() {
     this.route('index', {path: '/'});
+    this.route('details', {path: '/:id'}, function(){
+      this.route('sub-assets', {path: '/sub-assets'});
+      this.route('projects', {path: '/projects'});
+      this.route('tasks', {path: '/tasks'});
+      this.route('assets', {path: '/assets'});
+      this.route('users', {path: '/users'});
+      this.route('danger', {path: '/danger'});
+    });
   });
+
   this.route('department');
 });
 
