@@ -260,4 +260,8 @@ html, body {
     background: #991c1f !important;
     color: #c2c4c6; }
 
+.no-items {
+  margin-top: 50px;
+  text-align: center; }
+
 /*# sourceMappingURL=app.css.map */

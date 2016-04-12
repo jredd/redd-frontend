@@ -1,5 +1,5 @@
-<div class="">
-    <h1 class="column">Sub-Assets</h1>
+<div class="column large-12">
+    <h1 class="">Sub-Assets</h1>
 </div>
 <div class="small-up-2 medium-up-3 large-up-4 tiled-list">
   {{#each sub-assets as |sub-asset|}}
@@ -28,6 +28,7 @@
               </div>
           </div>
       </section>
+  {{else}}
+    <h3 class="column large-12 no-items">0 Sub-Assets Found</h3>
   {{/each}}
 </div>
-{{outlet}}
