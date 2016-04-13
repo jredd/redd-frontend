@@ -1,0 +1,21 @@
+
+.create-wrapper {
+
+}
+
+.create-footer {
+  background-color: $white;
+  color: $charcoal;
+
+  a {
+    color: $red_med_dark;
+    padding: 5px 10px;
+  }
+  &:hover {
+    color: $charcoal;
+    transition: .25s;
+  }
+  .create {
+
+  }
+}

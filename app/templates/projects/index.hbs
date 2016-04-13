@@ -1,6 +1,11 @@
 {{outlet}}
-<div class="row">
-  <h1 class="column">Projects</h1>
+<div class="row section-header">
+  <h1 class="column large-6">Projects</h1>
+    <div class="column large-6">
+        <ul class="pull-right">
+            <li class="add-item">{{#link-to "projects.create"}}+{{/link-to}}</li>
+        </ul>
+    </div>
 </div>
 <div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
   {{#each model as |project|}}

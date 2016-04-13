@@ -11,6 +11,7 @@ Router.map(function() {
 
   this.route('projects', function(){
     this.route('index', {path: '/'});
+    this.route('create');
     this.route('details', {path: '/:id'}, function() {
       this.route('departments', {path: '/departments'});
       this.route('assets', {path: '/assets'});
@@ -35,7 +36,6 @@ Router.map(function() {
     this.route('index', {path: '/'});
     this.route('details', {path: '/:id'}, function(){
       this.route('sub-assets', {path: '/sub-assets'});
-      this.route('projects', {path: '/projects'});
       this.route('tasks', {path: '/tasks'});
       this.route('assets', {path: '/assets'});
       this.route('users', {path: '/users'});

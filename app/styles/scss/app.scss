@@ -4,6 +4,8 @@
 @import 'buttons';
 @import 'projects';
 @import 'tiled_list';
+@import 'create_screens';
+
 
 *, section, div, span, li, ul {
   margin: 0;
@@ -59,8 +61,28 @@ html, body {
 }
 
 .no-items {
-  margin-top: 50px;
+  font-size: 3em;
+  font-weight: 400;
   text-align: center;
+  color: #595959;
+
+}
+
+.section-header {
+  ul {
+    list-style: none;
+  }
+  .add-item {
+    font-size: 3.5em;
+    a {
+      color: $white;
+      padding: 10px 15px;
+    }
+    &:hover {
+      background-color: $red_med_dark;
+      transition: .25s;
+    }
+  }
 }
 
 

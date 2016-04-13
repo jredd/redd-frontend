@@ -213,6 +213,16 @@ nav {
       background-color: #991c1f;
       color: #e2e3e4; }
 
+.create-footer {
+  background-color: #e2e3e4;
+  color: #2c2c2c; }
+  .create-footer a {
+    color: #7b1619;
+    padding: 5px 10px; }
+  .create-footer:hover {
+    color: #2c2c2c;
+    transition: .25s; }
+
 *, section, div, span, li, ul {
   margin: 0;
   padding: 0;
@@ -261,7 +271,20 @@ html, body {
     color: #c2c4c6; }
 
 .no-items {
-  margin-top: 50px;
-  text-align: center; }
+  font-size: 3em;
+  font-weight: 400;
+  text-align: center;
+  color: #595959; }
+
+.section-header ul {
+  list-style: none; }
+.section-header .add-item {
+  font-size: 3.5em; }
+  .section-header .add-item a {
+    color: #e2e3e4;
+    padding: 10px 15px; }
+  .section-header .add-item:hover {
+    background-color: #7b1619;
+    transition: .25s; }
 
 /*# sourceMappingURL=app.css.map */
