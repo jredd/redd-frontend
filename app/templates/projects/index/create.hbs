@@ -1,7 +1,7 @@
 <div id="fade" class="black_overlay" {{action 'cancel' on='click'}}></div>
 <div class="pop_up">
     <div class="row">
-        <h1>Create Project</h1>
+        <h3>Create Project</h3>
     </div>
     <div class="row">
         <form class="margin-base-vertical" {{action "create_project" on="submit"}}>
@@ -16,6 +16,8 @@
                   </div>
                   <label>Select Box
                       </label>
+                  {{view "select" content=names}}
+
               </div>
             </div>
       </form>

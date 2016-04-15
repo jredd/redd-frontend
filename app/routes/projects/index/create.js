@@ -11,5 +11,6 @@ export default Ember.Route.extend({
       console.log('cancel create');
     }
   },
-  users: ['bob', 'saggot']
+  names: ["Yehuda", "Tom"]
+  //users: ['bob', 'saggot']
 });
