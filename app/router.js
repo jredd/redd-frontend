@@ -10,8 +10,10 @@ Router.map(function() {
   this.route('index', {path: '/'});
 
   this.route('projects', function(){
-    this.route('index', {path: '/'});
-    this.route('create');
+    this.route('index', {path: '/'}, function(){
+      this.route('create', {path: '/create'});
+    });
+
     this.route('details', {path: '/:id'}, function() {
       this.route('departments', {path: '/departments'});
       this.route('assets', {path: '/assets'});

@@ -51,7 +51,7 @@ export default Base.extend({
           var stored_token = {token: response.token, id: response.id};
 
           if (!isEmpty(expiresAt)) {
-            stored_token = Ember.merge(stored_token, { expires_in: expiresAt, expires_at: expiresIn});
+            stored_token = Ember.assign(stored_token, { expires_in: expiresAt, expires_at: expiresIn});
           }
           resolve(stored_token);
         });
@@ -127,7 +127,7 @@ export default Base.extend({
           var refreshToken    = response['token'] || token;
           const expiresIn = this._expiresInTime();
           const expiresAt = this._absolutizeExpirationTime();
-          const new_data      = Ember.merge(response, { 'expires_in': expiresIn, 'expires_at': expiresAt, 'token': refreshToken });
+          const new_data      = Ember.assign(response, { 'expires_in': expiresIn, 'expires_at': expiresAt, 'token': refreshToken });
           this._scheduleAccessTokenRefresh(expiresIn, expiresAt, refreshToken);
           this.trigger('sessionDataUpdated', new_data);
           resolve(new_data);

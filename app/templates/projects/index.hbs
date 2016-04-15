@@ -1,9 +1,8 @@
-{{outlet}}
 <div class="row section-header">
   <h1 class="column large-6">Projects</h1>
     <div class="column large-6">
         <ul class="pull-right">
-            <li class="add-item">{{#link-to "projects.create"}}+{{/link-to}}</li>
+            <li class="add-item">{{#link-to "projects.index.create"}}+{{/link-to}}</li>
         </ul>
     </div>
 </div>
@@ -36,3 +35,4 @@
     </section>
   {{/each}}
 </div>
+    {{outlet}}

@@ -1,0 +1,29 @@
+<div id="fade" class="black_overlay" {{action 'cancel' on='click'}}></div>
+<div class="pop_up">
+    <div class="row">
+        <h1>Create Project</h1>
+    </div>
+    <div class="row">
+        <form class="margin-base-vertical" {{action "create_project" on="submit"}}>
+            <div class="row">
+              <div class="large-12 column">
+                  <div class="large-12 columns">
+                      <label>Name</label>
+                    {{input class='form-control' value=name type='input' placeholder='Name' required=''}}
+                  </div>
+                  <div class="large-12 columns">
+                    {{input class='checkbox1' type="checkbox" name="is_active" checked=is_active}}<label>:Active</label>
+                  </div>
+                  <label>Select Box
+                      </label>
+              </div>
+            </div>
+      </form>
+  </div>
+  <footer class="create-footer">
+      <ul>
+          <li class=""><a {{action 'cancel' on='click'}}>Cancel</a></li>
+          <li class="pull-right"><a>Create</a></li>
+      </ul>
+  </footer>
+</div>
