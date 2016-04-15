@@ -213,9 +213,52 @@ nav {
       background-color: #991c1f;
       color: #e2e3e4; }
 
+.black_overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .50;
+  filter: alpha(opacity=50); }
+
+.pop_up {
+  color: #2c2c2c;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  padding: 16px;
+  border: 2px solid #2c2c2c;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+  -webkit-animation: fadein .25s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein .25s;
+  /* Firefox < 16 */
+  -ms-animation: fadein .25s;
+  /* Internet Explorer */
+  -o-animation: fadein .25s;
+  /* Opera < 12.1 */
+  animation: fadein .25s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 .create-footer {
-  background-color: #e2e3e4;
-  color: #2c2c2c; }
+  display: inline-block;
+  color: #2c2c2c;
+  width: 100%; }
+  .create-footer ul {
+    list-style: none; }
+    .create-footer ul li {
+      float: left; }
   .create-footer a {
     color: #7b1619;
     padding: 5px 10px; }
