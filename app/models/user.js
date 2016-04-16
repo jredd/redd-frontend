@@ -20,9 +20,12 @@ export default DS.Model.extend({
   name: Ember.computed('first_name', 'last_name', function() {
     const first_name = this.get('first_name');
     const last_name = this.get('last_name');
+    const email = this.get('email');
 
     if (first_name || last_name == null){
       return `${this.get('first_name')} ${this.get('last_name')}`;
+    }else if (email) {
+      return email;
     }else {
       return null;
     }

@@ -6,26 +6,34 @@
     <div class="row">
         <form class="margin-base-vertical" {{action "create_project" on="submit"}}>
             <div class="row">
-              <div class="large-12 column">
-                  <div class="large-12 columns">
-                      <label>Name</label>
-                    {{input class='form-control' value=name type='input' placeholder='Name' required=''}}
-                  </div>
-                  <div class="large-12 columns">
-                    {{input class='checkbox1' type="checkbox" name="is_active" checked=is_active}}<label>:Active</label>
-                  </div>
-                  <label>Select Box
+                <div class="large-12 column">
+                    <div class="large-12 columns">
+                        <label>Name</label>
+                      {{input class='form-control' value=name type='input' placeholder='Name' required=''}}
+                    </div>
+                    <div class="large-12 columns">
+                      {{input class='checkbox1' type="checkbox" name="is_active" checked=true}}<label> Active</label>
+                    </div>
+                    <div class="large-12 columns">
+                      <label>Managing User
+                          <select>
+                            {{#each model as |user|}}
+                                <option value={{user.id}}>{{user.name}}</option>
+                            {{/each}}
+                          </select>
                       </label>
-                  {{view "select" content=names}}
-
-              </div>
+                    </div>
+                    <div class="large-12 columns">
+                        <button class="fa-upload">Upload Icon</button>
+                    </div>
+                </div>
             </div>
-      </form>
-  </div>
-  <footer class="create-footer">
-      <ul>
-          <li class=""><a {{action 'cancel' on='click'}}>Cancel</a></li>
-          <li class="pull-right"><a>Create</a></li>
-      </ul>
-  </footer>
+        </form>
+    </div>
+    <footer class="create-footer">
+        <ul>
+            <li class=""><a {{action 'cancel' on='click'}}>Cancel</a></li>
+            <li class="pull-right"><a>Create</a></li>
+        </ul>
+    </footer>
 </div>

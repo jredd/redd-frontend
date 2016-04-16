@@ -10,11 +10,7 @@
       {{#link-to 'assets.index' activeClass='active'}}Assets{{/link-to}}
     </li>
     <li class="">
-      <a>{{#if currentUser.content.first_name}}
-        {{currentUser.content.first_name}}
-      {{else}}
-        {{currentUser.content.email}}
-      {{/if}}</a>
+      <a>{{currentUser.content.name}}</a>
         <ul class="nav_sub">
             <li><a href="#">Change Password</a></li>
             <li><a {{action 'invalidateSession'}}>Logout</a></li>

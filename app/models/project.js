@@ -7,6 +7,7 @@ export default DS.Model.extend({
   date_created: attr('date'),
   is_active: attr('boolean'),
   created_by: belongsTo('user'),
-  icon: attr('string')
-  //current_client: attr('manytomany')
+  managing_user: belongsTo('user'),
+  icon: attr('string'),
+  current_client: belongsTo('client')
 });
