@@ -8,9 +8,10 @@ export default Ember.Route.extend({
     },
     cancel() {
       this.transitionTo('projects.index');
-      console.log('cancel create');
+      console.log('cancel project create');
     }
   },
-  names: ["Yehuda", "Tom"]
-  //users: ['bob', 'saggot']
+  model() {
+    return this.store.findAll('user');
+  }
 });
