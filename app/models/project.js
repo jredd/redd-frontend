@@ -9,5 +9,5 @@ export default DS.Model.extend({
   created_by: belongsTo('user'),
   managing_user: belongsTo('user'),
   icon: attr('string'),
-  current_client: belongsTo('client')
+  //current_client: belongsTo('client')
 });
