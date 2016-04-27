@@ -4,36 +4,51 @@
         <h3>Create Project</h3>
     </div>
     <div class="row">
-        <form class="margin-base-vertical" {{action "create_project" on="submit"}}>
+        <form class="margin-base-vertical" {{action "createProject" on="submit"}}>
             <div class="row">
+
                 <div class="large-12 column">
-                    <div class="large-12 columns">
-                        <label>Name</label>
-                      {{input class='form-control' value=name type='input' placeholder='Name' required=''}}
+                    <div class="large-3 columns">
+
+                        <img src="{{icon}}" width="200">
                     </div>
-                    <div class="large-12 columns">
-                      {{input class='checkbox1' type="checkbox" name="is_active" checked=true}}<label> Active</label>
+                    <div class="large-9 column">
+                        <div class="file_upload button">
+                            <span>Upload</span>
+                          {{input value=new_icon type='file' class='upload'}}
+
+                        </div>
                     </div>
-                    <div class="large-12 columns">
-                      <label>Managing User
-                          <select>
-                            {{#each model as |user|}}
-                                <option value={{user.id}}>{{user.name}}</option>
-                            {{/each}}
-                          </select>
-                      </label>
+                  </div>
+              <div class="large-12 column">
+                    <div class="large-4 columns">
+                        <label>Project Name</label>
+                      {{input class='form-control' value=name type='input' placeholder='Name' required=true}}
                     </div>
-                    <div class="large-12 columns">
-                        <button class="fa-upload">Upload Icon</button>
+                    <div class="large-4 columns">
+                        <label>Managing User
+                            <select required onchange={{action "setManagingUser" value="target.value"}}>
+                                <option selected disabled value="">Choose here</option>
+                              {{#each model as |user|}}
+                                  <option value={{user.id}}>{{user.name}}</option>
+                              {{/each}}
+                            </select>
+                        </label>
                     </div>
+                    <div class="large-4 columns">
+                      {{input class='checkbox1' type="checkbox" name="is_active" checked=is_active}}<label> Active</label>
+                    </div>
+
                 </div>
             </div>
+            <footer class="create-footer">
+                <ul>
+                    <li class=""><a {{action 'cancel' on='click'}}>Cancel</a></li>
+                    <li class="pull-right"><button type="submit">Create</button></li>
+                    <!--<li class="pull-right"><a>Create</a></li>-->
+                </ul>
+            </footer>
         </form>
     </div>
-    <footer class="create-footer">
-        <ul>
-            <li class=""><a {{action 'cancel' on='click'}}>Cancel</a></li>
-            <li class="pull-right"><a>Create</a></li>
-        </ul>
-    </footer>
+
 </div>
