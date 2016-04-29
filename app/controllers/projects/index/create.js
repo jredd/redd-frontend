@@ -1,12 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  //users: Ember.String.w('shit poop nouw')
-  //users: ['get', 'fucked', 'right', 'nouw']
-  //users: function() {
-  //  console.log(Ember.String.w('shit poop nouw'));
-  //  return ['get', 'fucked', 'right', 'nouw'];
-  //}
   session: Ember.inject.service('session'),
   icon: '/assets/default_project_icon.jpg',
   managingUser: null,
@@ -26,28 +20,24 @@ export default Ember.Controller.extend({
       console.log(this.get('currentUser.content.id'));
       var project = this.store.createRecord('project', {
         name: name,
-        //date_created: attr('date'),
         is_active: is_active,
-        created_by: this.get('currentUser.content.id'),
-        managing_user: this.managingUser,
+        created_by: this.get('currentUser.content'),
+        managing_user: this.store.findRecord('user', this.managingUser),
         icon: new_icon
       });
-      //console.log(this.get('currentUser.content.id'))
-      //console.log(project)
+
       var self = this;
 
       function transitionToProject(project) {
-        self.transitionToRoute('projects.detail', project);
+        self.transitionToRoute('projects.details', project);
       }
 
       function failure(reason) {
         console.log(reason);
       }
-
+      // Waits on the server to respond back with the created info
+      // then goes to it's details page
       project.save().then(transitionToProject).catch(failure);
     }
   }
-  //new_icon: Ember.observer('icon_path', function() {
-  //  console.log('icon_path');
-  //})
 });
