@@ -1,35 +1,58 @@
-<div class="row">
-    <h1 class="column">Departments</h1>
+<div class="column">
+    <h1>Departments</h1>
 </div>
-<div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
-  {{#each departments as |department|}}
-    <section class="column">
-        <div class="callout">
-            <label>{{department.name}}</label>
-            <ul>
-                <li>
-                  {{#if department.icon}}
-                    {{department.icon}}
-                  {{else}}
-                      <img src="/assets/default_department_icon.jpg">
-                  {{/if}}
-                </li>
-                <li>{{format-date department.date_created}}</li>
-                <li>
-                  {{#if department.is_active}}
-                      Status:<span class="is_active"></span>
-                  {{else}}
-                      Status:<span class="is_inactive"></span>
-                  {{/if}}
-                </li>
-            </ul>
-            <div class="">
-              {{#link-to "projects.details.departments" department.id class="expanded button"}}More{{/link-to}}
-            </div>
-        </div>
+<span class="edit" {{action 'edit'}}>Edit</span>
+{{#if edit}}
+
+  <div class="column">
+      <section class="large-5 columns selector_available large-push-1">
+          <select multiple="multiple">
+            {{#each departments.deparments as |department|}}
+                <option value={{department.id}}>{{department.name}}</option>
+            {{/each}}
+          </select>
+      </section>
+    <section class="selector_chooser large-push-1">
+        <span class="fi-arrow-right"></span>
+        <span class="fi-arrow-left"></span>
     </section>
-  {{else}}
-      <h3 class="no-items">0 Sub-Assets Found</h3>
-  {{/each}}
-</div>
+      <section class="large-5 columns selector_chosen large-pull-1">
+          <select multiple="multiple">
+            {{#each departments as |department|}}
+                <option value={{department.id}}>{{department.name}}</option>
+            {{/each}}
+          </select>
+      </section>
+  </div>
+{{else}}
+    <div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
+      {{#each departments as |department|}}
+          <section class="column">
+              <div class="callout">
+                  <label>{{department.name}}</label>
+                  <ul>
+                      <li>
+                        {{#if department.icon}}
+                          {{department.icon}}
+                        {{else}}
+                            <img src="/assets/default_department_icon.jpg">
+                        {{/if}}
+                      </li>
+                      <li>{{format-date department.date_created}}</li>
+                      <li>
+                        {{#if department.is_active}}
+                            Status:<span class="is_active"></span>
+                        {{else}}
+                            Status:<span class="is_inactive"></span>
+                        {{/if}}
+                      </li>
+                  </ul>
+              </div>
+          </section>
+      {{else}}
+          <h3 class="no-items">0 Sub-Assets Found</h3>
+      {{/each}}
+    </div>
+{{/if}}
+
 {{outlet}}
