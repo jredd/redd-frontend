@@ -60,6 +60,8 @@ html, body {
   }
 }
 
+
+
 .no-items {
   font-size: 3em;
   font-weight: 400;
@@ -82,5 +84,45 @@ html, body {
       background-color: $red_med_dark;
       transition: .25s;
     }
+  }
+}
+
+.disabled {
+  display: none;;
+}
+
+
+.edit {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.selector_chooser {
+  width: 25px;
+  margin-left: -12px;
+  display: inline-block;
+  border: 1px solid $white;
+  margin-top: 60px;
+  span {
+    float: left;
+    padding: 5px;
+  }
+}
+
+
+.selector_available {
+  select {
+    min-height: 200px;
+    max-height: 200px;
+  }
+}
+
+
+.selector_chosen {
+  select {
+    min-height: 200px;
+    max-height: 200px;
   }
 }

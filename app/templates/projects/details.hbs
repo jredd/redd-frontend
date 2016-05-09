@@ -1,34 +1,14 @@
 <div class="row">
-    <div class="">
-        <div class="media-object-section">
-          {{#if icon}}
-            {{icon}}
-          {{else}}
-              <img src="/assets/default_project_icon.jpg">
-          {{/if}}
-        </div>
-        <div class="media-object-section project_details">
-            <label>{{model.name}}</label>
-            <ul>
-                <li>Date: {{format-date model.date_created}}</li>
-                <li>
-                  {{#if model.is_active}}
-                      Status:<span class="is_active"></span>
-                  {{else}}
-                      Status:<span class="is_inactive"></span>
-                  {{/if}}
-                </li>
-            </ul>
-        </div>
-    </div>
+
     <hr>
-    <div class="row other-details">
+    <div class="other-details">
         <div class="column">
             <ul class="nav">
                 <li>{{#link-to "projects.details.departments" activeClass='active'}}Departments{{/link-to}}</li>
                 <li>{{#link-to "projects.details.users" activeClass='active'}}Users{{/link-to}}</li>
                 <li>{{#link-to "projects.details.assets" activeClass='active'}}Assets{{/link-to}}</li>
                 <li>{{#link-to "projects.details.danger" activeClass='active'}}Stranger Danger{{/link-to}}</li>
+
             </ul>
         </div>
         <div class="column">

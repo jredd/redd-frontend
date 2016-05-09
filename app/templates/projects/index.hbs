@@ -9,7 +9,9 @@
 <div class="row small-up-2 medium-up-3 large-up-4 tiled-list">
   {{#each model as |project|}}
     <section class="column">
+
       <div class="callout">
+        {{#link-to "projects.details.departments" project.id class="expanded page_tiles"}}
           <label>{{project.name}}</label>
           <ul>
               <li>
@@ -28,9 +30,7 @@
                 {{/if}}
               </li>
           </ul>
-          <div class="">
-            {{#link-to "projects.details.departments" project.id class="expanded button"}}More{{/link-to}}
-          </div>
+      {{/link-to}}
       </div>
     </section>
   {{/each}}

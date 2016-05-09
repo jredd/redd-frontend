@@ -35,6 +35,20 @@
           color: $white;
         }
       }
+      &:hover {
+        background-color: $white;
+        color: $charcoal;
+        transition: .25s;
+      }
+      a {
+        &:hover {
+          label, li{
+            color: $charcoal;
+            transition: .25s;
+          }
+
+        }
+      }
 
     }
 

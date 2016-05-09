@@ -201,6 +201,13 @@ nav {
       .tiled-list section .callout ul li {
         padding: 0;
         color: #e2e3e4; }
+    .tiled-list section .callout:hover {
+      background-color: #e2e3e4;
+      color: #2c2c2c;
+      transition: .25s; }
+    .tiled-list section .callout a:hover label, .tiled-list section .callout a:hover li {
+      color: #2c2c2c;
+      transition: .25s; }
   .tiled-list section .is_active {
     display: inline-block;
     width: 15px;
@@ -353,5 +360,29 @@ html, body {
   .section-header .add-item:hover {
     background-color: #7b1619;
     transition: .25s; }
+
+.disabled {
+  display: none; }
+
+.edit:hover {
+  cursor: pointer; }
+
+.selector_chooser {
+  width: 25px;
+  margin-left: -12px;
+  display: inline-block;
+  border: 1px solid #e2e3e4;
+  margin-top: 60px; }
+  .selector_chooser span {
+    float: left;
+    padding: 5px; }
+
+.selector_available select {
+  min-height: 200px;
+  max-height: 200px; }
+
+.selector_chosen select {
+  min-height: 200px;
+  max-height: 200px; }
 
 /*# sourceMappingURL=app.css.map */

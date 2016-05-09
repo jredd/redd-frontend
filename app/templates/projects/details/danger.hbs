@@ -1,5 +1,19 @@
 {{outlet}}
 <div class="column">
     <h1>Danger</h1>
-    <button class="button" {{action 'delete' on='click'}}>Delete Project</button>
+
+    <button class="button" {{action 'toggleDeleteModal' on='click'}}>Delete Project</button>
+    <section id="deleteModal" class="pop_up disabled">
+        <h3 class="warning">Warning!</h3>
+        <p>To delete the project type in the projects exact name</p>
+        <p>
+            This action is destructive and will permanently remove the project from the system.
+            it's better to make the project inactive than to out right delete it.
+        </p>
+        {{input type='text' value=confirmField action='checkMatching' on='key-up'}}
+        <button class="button" {{action 'cancel' on='click'}}>Cancel</button>
+        <button disabled class="button pull-right delete_project" {{action 'delete' on='click'}}>Are you super duper sure?</button>
+    </section>
+
 </div>
+<div id="fade" class="black_overlay disabled" {{action 'cancel' on='click'}}></div>
